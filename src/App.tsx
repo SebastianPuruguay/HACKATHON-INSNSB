@@ -12,7 +12,9 @@ import { Timeline } from './components/Timeline'
 
 function App() {
   return (
-    <main className="overflow-hidden">
+    <main className="relative overflow-hidden bg-[#020617]">
+      <div className="dot-mesh-fade pointer-events-none absolute inset-0 z-0 opacity-55" />
+      <div className="relative z-10">
       <Hero />
       <About />
       <ChallengeTracks />
@@ -24,6 +26,7 @@ function App() {
       <RegistrationCTA />
       <FAQ />
       <Footer />
+      </div>
     </main>
   )
 }

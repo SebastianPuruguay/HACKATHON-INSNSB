@@ -2,6 +2,9 @@ import { Building2, GraduationCap, HeartHandshake, Landmark, Microscope, Sparkle
 import type { LucideIcon } from 'lucide-react'
 import { motion, useAnimationFrame, useMotionValue } from 'motion/react'
 import { useState } from 'react'
+import logoEsan from '../assets/aliado-esan.png'
+import logoPcm from '../assets/aliado-pcm.png'
+import logoPucp from '../assets/aliado-pucp.png'
 import logoHorizontalInsnsb from '../assets/logoinsnsb.png'
 import { Reveal } from './Reveal'
 
@@ -14,6 +17,9 @@ type Partner = {
 
 const partners: Partner[] = [
   { name: 'INSN San Borja', type: 'Organizador', logo: logoHorizontalInsnsb },
+  { name: 'PUCP', type: 'Aliado académico', logo: logoPucp },
+  { name: 'Universidad ESAN', type: 'Aliado académico', logo: logoEsan },
+  { name: 'PCM', type: 'Aliado institucional', logo: logoPcm },
   { name: 'Institución aliada', type: 'Salud pública', icon: Landmark },
   { name: 'Universidad aliada', type: 'Academia', icon: GraduationCap },
   { name: 'Empresa tecnológica', type: 'Tecnología', icon: Sparkles },
@@ -37,15 +43,16 @@ export function PartnersCarousel() {
   })
 
   return (
-    <section className="section-glow relative overflow-hidden py-24 sm:py-32">
+    <section className="section-glow relative overflow-hidden bg-[#060b1d] py-24 sm:py-32">
       <div className="circuit-pattern pointer-events-none absolute inset-0 opacity-10" />
-      <div className="section-shell relative">
+      <div className="dot-mesh pointer-events-none absolute inset-0 z-0 opacity-45" />
+      <div className="section-shell relative z-10">
         <Reveal className="mx-auto max-w-3xl text-center">
           <span className="section-eyebrow">Ecosistema de innovación</span>
-          <h2 className="font-display text-4xl leading-tight font-semibold tracking-[-0.04em] text-[#0a1b33] sm:text-5xl">
+          <h2 className="font-display text-4xl leading-tight font-semibold tracking-[-0.04em] text-white sm:text-5xl">
             Aliados y organizaciones participantes
           </h2>
-          <p className="mt-5 leading-7 text-slate-600">
+          <p className="mt-5 leading-7 text-slate-300">
             Instituciones, universidades, empresas y organizaciones que impulsan la
             innovación en salud pediátrica.
           </p>
@@ -53,8 +60,8 @@ export function PartnersCarousel() {
       </div>
 
       <Reveal delay={0.1} className="relative mt-14">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-[#f9fafb] to-transparent sm:w-40" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-[#f9fafb] to-transparent sm:w-40" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-[#060b1d] to-transparent sm:w-40" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-[#060b1d] to-transparent sm:w-40" />
         <div
           className="overflow-hidden"
           onMouseEnter={() => setPaused(true)}
@@ -66,13 +73,13 @@ export function PartnersCarousel() {
               return (
                 <article
                   key={`${partner.name}-${index}`}
-                  className="group flex h-28 w-60 shrink-0 items-center gap-4 rounded-[26px] border border-indigo-100 bg-white px-5 shadow-[0_12px_40px_rgba(79,70,229,0.07)] transition-all hover:-translate-y-1 hover:border-violet-200 hover:shadow-[0_18px_50px_rgba(124,58,237,0.16)]"
+                  className="group flex h-28 w-60 shrink-0 items-center gap-4 rounded-[26px] border border-white/10 bg-slate-900/75 px-5 shadow-[0_18px_45px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-all hover:-translate-y-1 hover:border-violet-400/30 hover:shadow-[0_18px_50px_rgba(124,58,237,0.18)]"
                 >
-                  <span className="flex h-12 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 to-violet-100 p-2 text-indigo-600 transition-transform group-hover:scale-105">
+                  <span className={`flex h-12 shrink-0 items-center justify-center rounded-2xl bg-white p-2 text-indigo-600 transition-transform group-hover:scale-105 ${partner.logo ? 'w-24' : 'w-16'}`}>
                     {partner.logo ? (
                       <img
                         src={partner.logo}
-                        alt="Logo del Instituto Nacional de Salud del Niño San Borja"
+                        alt={`Logo de ${partner.name}`}
                         className="h-full w-full object-contain"
                       />
                     ) : (
@@ -80,7 +87,7 @@ export function PartnersCarousel() {
                     )}
                   </span>
                   <span>
-                    <span className="block font-display text-sm font-semibold text-[#0a1b33]">
+                    <span className="block font-display text-sm font-semibold text-white">
                       {partner.name}
                     </span>
                     <span className="mt-1 block text-xs text-slate-400">{partner.type}</span>

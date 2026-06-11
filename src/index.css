@@ -19,14 +19,14 @@
   body {
     margin: 0;
     min-width: 320px;
-    background: #f9fafb;
-    color: #0a1b33;
+    background: #020617;
+    color: #f8fafc;
     font-family: var(--font-sans);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     background-image:
-      radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.045), transparent 28%),
-      radial-gradient(circle at 90% 50%, rgba(124, 58, 237, 0.04), transparent 25%);
+      radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.14), transparent 28%),
+      radial-gradient(circle at 90% 50%, rgba(124, 58, 237, 0.12), transparent 25%);
   }
 
   button,
@@ -45,19 +45,36 @@
   }
 
   .section-eyebrow {
-    @apply mb-4 inline-flex items-center gap-2 rounded-full border border-indigo-200/70 bg-indigo-50 px-3 py-1.5 text-[11px] font-bold tracking-[0.16em] text-indigo-700 uppercase;
+    @apply mb-4 inline-flex items-center gap-2 rounded-full border border-indigo-400/20 bg-indigo-400/10 px-3 py-1.5 text-[11px] font-bold tracking-[0.16em] text-indigo-200 uppercase backdrop-blur-xl;
   }
 
   .soft-grid {
     background-image:
-      linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+      linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 
   .dot-grid {
-    background-image: radial-gradient(rgba(79, 70, 229, 0.22) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(199, 210, 254, 0.3) 1.15px, transparent 1.35px);
+    background-position: center;
     background-size: 18px 18px;
+  }
+
+  .dot-mesh {
+    background-image: radial-gradient(circle, rgba(191, 219, 254, 0.28) 1.1px, transparent 1.35px);
+    background-position: center;
+    background-size: 18px 18px;
+    mask-image: radial-gradient(ellipse at center, black 22%, rgba(0, 0, 0, 0.82) 62%, transparent 88%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 22%, rgba(0, 0, 0, 0.82) 62%, transparent 88%);
+  }
+
+  .dot-mesh-fade {
+    background-image: radial-gradient(circle, rgba(199, 210, 254, 0.24) 1.1px, transparent 1.35px);
+    background-position: center;
+    background-size: 18px 18px;
+    mask-image: linear-gradient(to bottom, transparent 2%, black 18%, black 82%, transparent 98%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 2%, black 18%, black 82%, transparent 98%);
   }
 
   .circuit-pattern {
@@ -70,8 +87,8 @@
 
   .section-glow {
     background:
-      radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.11), transparent 28%),
-      radial-gradient(circle at 85% 75%, rgba(124, 58, 237, 0.09), transparent 30%);
+      radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.13), transparent 28%),
+      radial-gradient(circle at 85% 75%, rgba(124, 58, 237, 0.12), transparent 30%);
   }
 
   .innovation-gradient {

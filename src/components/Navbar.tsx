@@ -26,7 +26,7 @@ export function Navbar() {
           </span>
           <span className="hidden text-left leading-tight sm:block">
             <span className="block font-display text-sm font-semibold">Hackathon Pediátrica</span>
-            <span className="block text-xs text-white/60">INSN-SB</span>
+            <span className="block text-xs text-white/60">INSNSB</span>
           </span>
         </a>
 

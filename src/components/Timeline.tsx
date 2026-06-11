@@ -14,7 +14,7 @@ export function Timeline() {
   return (
     <section id="cronograma" className="relative overflow-hidden bg-gradient-to-br from-[#080d2b] via-[#111453] to-[#351065] py-24 text-white sm:py-32">
       <div className="circuit-pattern pointer-events-none absolute inset-0 opacity-20" />
-      <div className="dot-grid pointer-events-none absolute top-12 right-10 h-64 w-64 opacity-15 [mask-image:radial-gradient(circle,black,transparent_70%)]" />
+      <div className="dot-mesh-fade pointer-events-none absolute inset-0 z-0 opacity-60" />
       <div className="section-shell relative">
         <Reveal className="max-w-2xl">
           <span className="section-eyebrow border-white/10 bg-white/10 text-violet-200">
