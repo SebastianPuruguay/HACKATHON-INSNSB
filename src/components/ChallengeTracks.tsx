@@ -1,73 +1,64 @@
-import { ArrowUpRight, BrainCircuit, ClipboardList, HeartPulse } from 'lucide-react'
+import { Activity, BrainCircuit, HeartPulse, Route, Salad } from 'lucide-react'
 import { Reveal } from './Reveal'
 
-const tracks = [
+const challenges = [
   {
-    number: '01',
+    icon: Route,
+    title: 'Ruta pediátrica integrada y trazable',
+    description: 'Reducir la fragmentación de la información clínica y de la ruta asistencial para asegurar continuidad del cuidado sin barreras geográficas ni administrativas.',
+    color: 'bg-blue-400/10 text-blue-300 border border-blue-400/20',
+  },
+  {
     icon: HeartPulse,
-    title: 'Salud pediátrica',
-    description:
-      'Soluciones para mejorar la atención, seguimiento, seguridad del paciente, diagnóstico, experiencia del niño y continuidad del cuidado.',
-    color: 'bg-blue-50 text-blue-600',
+    title: 'Corazón a tiempo',
+    description: 'Fortalecer la detección temprana y confirmación diagnóstica de cardiopatías congénitas críticas para mejorar decisiones clínicas y reducir demoras.',
+    color: 'bg-indigo-400/10 text-indigo-300 border border-indigo-400/20',
   },
   {
-    number: '02',
+    icon: Activity,
+    title: 'Oncología pediátrica de precisión y cuidado humanizado',
+    description: 'Mejorar la exactitud clínica en estudios complejos y ofrecer una experiencia más humana, oportuna y segura durante los procedimientos.',
+    color: 'bg-violet-400/10 text-violet-300 border border-violet-400/20',
+  },
+  {
     icon: BrainCircuit,
-    title: 'Tecnología, IA y datos',
-    description:
-      'Aplicaciones web, automatización, inteligencia artificial, dashboards, interoperabilidad, análisis de datos y asistentes digitales.',
-    color: 'bg-indigo-50 text-indigo-600',
+    title: 'Salud mental y neurodesarrollo con detección temprana',
+    description: 'Agilizar la detección mediante herramientas estandarizadas que respalden el juicio clínico y mejoren la continuidad de la atención.',
+    color: 'bg-fuchsia-400/10 text-fuchsia-300 border border-fuchsia-400/20',
   },
   {
-    number: '03',
-    icon: ClipboardList,
-    title: 'Gestión hospitalaria',
-    description:
-      'Mejoras en procesos administrativos, trazabilidad, tiempos de atención, reportes, inscripción, comunicación y gestión documental.',
-    color: 'bg-violet-50 text-violet-600',
+    icon: Salad,
+    title: 'Crecer mejor: seguimiento inteligente del desarrollo nutricional infantil',
+    description: 'Monitorear crecimiento y nutrición con herramientas no invasivas y analítica de datos para detectar desviaciones y apoyar a las familias.',
+    color: 'bg-sky-400/10 text-sky-300 border border-sky-400/20',
   },
 ]
 
 export function ChallengeTracks() {
   return (
-    <section id="retos" className="section-glow relative overflow-hidden bg-gradient-to-b from-[#060b1d] to-[#0f172a] py-24 sm:py-32">
+    <section id="desafios" className="section-glow relative overflow-hidden bg-gradient-to-b from-[#060b1d] to-[#0f172a] py-24 sm:py-32">
       <div className="circuit-pattern pointer-events-none absolute inset-0 opacity-20" />
       <div className="dot-mesh pointer-events-none absolute inset-0 z-0 opacity-45" />
       <div className="section-shell relative z-10">
-        <Reveal className="max-w-2xl">
-          <span className="section-eyebrow">Áreas de innovación</span>
-          <h2 className="font-display text-4xl leading-tight font-semibold tracking-[-0.04em] text-white sm:text-5xl">
-            Tres frentes para generar impacto
-          </h2>
-          <p className="mt-5 leading-7 text-slate-300">
-            Elige un reto y conviértelo en una propuesta aplicable, medible y centrada en
-            las personas.
-          </p>
+        <Reveal className="max-w-3xl">
+          <span className="section-eyebrow">Desafíos prioritarios</span>
+          <h2 className="font-display text-4xl leading-tight font-semibold tracking-[-0.04em] text-white sm:text-5xl">Cinco desafíos con potencial de impacto real</h2>
+          <p className="mt-5 leading-7 text-slate-300">Cada equipo desarrollará una solución innovadora, viable y con potencial de implementación para uno de los desafíos oficiales.</p>
         </Reveal>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
-          {tracks.map((track, index) => {
-            const Icon = track.icon
+        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {challenges.map((challenge, index) => {
+            const Icon = challenge.icon
             return (
-              <Reveal key={track.title} delay={index * 0.08}>
+              <Reveal key={challenge.title} delay={index * 0.06}>
                 <article className="group relative h-full overflow-hidden rounded-[32px] border border-white/10 bg-slate-900/70 p-7 shadow-[0_18px_50px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-all hover:-translate-y-1.5 hover:border-violet-400/30 hover:shadow-[0_24px_60px_rgba(79,70,229,0.2)]">
-                  <Icon className="pointer-events-none absolute -right-8 -bottom-8 h-40 w-40 text-indigo-600 opacity-[0.35] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3" />
-                  <div className="pointer-events-none absolute top-1/2 -right-16 h-36 w-36 rounded-full bg-violet-400/10 blur-3xl" />
-                  <div className="flex items-start justify-between">
-                    <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${track.color}`}>
-                      <Icon className="h-6 w-6" />
-                    </span>
-                    <div className="flex items-center gap-3">
-                      <span className="font-display text-sm font-semibold text-slate-500">
-                        {track.number}
-                      </span>
-                      <ArrowUpRight className="h-5 w-5 text-slate-300 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-violet-600" />
-                    </div>
+                  <Icon className="pointer-events-none absolute -right-8 -bottom-8 h-40 w-40 text-indigo-500 opacity-[0.07] transition-transform duration-500 group-hover:scale-110" />
+                  <div className="flex items-start justify-between gap-5">
+                    <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${challenge.color}`}><Icon className="h-6 w-6" /></span>
+                    <span className="font-display text-sm font-semibold text-slate-500">0{index + 1}</span>
                   </div>
-                  <h3 className="mt-8 font-display text-2xl font-semibold tracking-[-0.03em] text-white">
-                    {track.title}
-                  </h3>
-                  <p className="mt-4 text-sm leading-7 text-slate-400">{track.description}</p>
+                  <h3 className="mt-8 font-display text-xl font-semibold tracking-[-0.03em] text-white">{challenge.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-400">{challenge.description}</p>
                 </article>
               </Reveal>
             )
