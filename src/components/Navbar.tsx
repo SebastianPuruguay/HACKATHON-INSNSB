@@ -1,14 +1,14 @@
-import { ArrowRight, Menu, X } from 'lucide-react'
+﻿import { ArrowRight, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import logoSymbolInsnsb from '../assets/logoinsnsb2.png'
 
 const links = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Acerca', href: '#acerca' },
-  { label: 'Desafíos', href: '#desafios' },
+  { label: 'DesafÃ­os', href: '#desafios' },
   { label: 'Participantes', href: '#participantes' },
   { label: 'Cronograma', href: '#cronograma' },
-  { label: 'Evaluación', href: '#evaluacion' },
+  { label: 'EvaluaciÃ³n', href: '#evaluacion' },
   { label: 'Bases', href: '#bases' },
 ]
 
@@ -16,18 +16,18 @@ export function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <nav className="relative z-30 px-5 pt-5 md:px-10 md:pt-7" aria-label="Navegación principal">
+    <nav className="relative z-30 px-5 pt-5 md:px-10 md:pt-7" aria-label="NavegaciÃ³n principal">
       <div className="flex items-center justify-between rounded-full border border-white/15 bg-slate-950/60 px-4 py-3 text-white shadow-[0_18px_55px_rgba(2,6,23,0.4)] backdrop-blur-2xl">
         <a href="#inicio" className="flex items-center gap-3" aria-label="Ir al inicio">
           <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-white/20 bg-white/90 shadow-sm">
             <img
               src={logoSymbolInsnsb}
-              alt="Logo del Instituto Nacional de Salud del Niño San Borja"
+              alt="Logo del Instituto Nacional de Salud del NiÃ±o San Borja"
               className="h-8 w-8 object-contain"
             />
           </span>
           <span className="hidden text-left leading-tight sm:block">
-            <span className="block font-display text-sm font-semibold">Hackatón en Salud Pediátrica</span>
+            <span className="block font-display text-sm font-semibold">HackatÃ³n en Salud PediÃ¡trica</span>
             <span className="block text-xs text-white/60">INSNSB</span>
           </span>
         </a>
@@ -41,20 +41,20 @@ export function Navbar() {
           {/* Future section: event recap after the hackathon */}
           <a href="#recap" className="flex items-center gap-1.5 text-[12px] font-medium text-white/70 transition-colors hover:text-white">
             Recap
-            <span className="rounded-full bg-white/10 px-1.5 py-0.5 text-[8px] text-indigo-200">Próximamente</span>
+            <span className="rounded-full bg-white/10 px-1.5 py-0.5 text-[8px] text-indigo-200">PrÃ³ximamente</span>
           </a>
         </div>
 
         <div className="flex items-center gap-2">
-          <a href="#inscripcion" className="innovation-gradient group hidden items-center gap-2 rounded-full px-5 py-2 text-[13px] font-semibold text-white shadow-[0_10px_30px_rgba(79,70,229,0.35)] transition-all hover:brightness-110 sm:flex">
-            Inscribirme
+          <a href="#interes" className="innovation-gradient group hidden items-center gap-2 rounded-full px-5 py-2 text-[13px] font-semibold text-white shadow-[0_10px_30px_rgba(79,70,229,0.35)] transition-all hover:brightness-110 sm:flex">
+            Me interesa
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
           </a>
           <button
             type="button"
             onClick={() => setOpen((current) => !current)}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/[0.06] text-white backdrop-blur-xl xl:hidden"
-            aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+            aria-label={open ? 'Cerrar menÃº' : 'Abrir menÃº'}
             aria-expanded={open}
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -64,7 +64,7 @@ export function Navbar() {
 
       {open && (
         <div className="absolute top-[84px] right-5 left-5 rounded-3xl border border-white/15 bg-slate-950/90 p-3 text-white shadow-2xl backdrop-blur-2xl xl:hidden">
-          {[...links, { label: 'Recap · Próximamente', href: '#recap' }].map((link) => (
+          {[...links, { label: 'Recap Â· PrÃ³ximamente', href: '#recap' }].map((link) => (
             <a key={link.href} href={link.href} onClick={() => setOpen(false)} className="block rounded-2xl px-4 py-3 text-sm font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white">
               {link.label}
             </a>
@@ -74,3 +74,5 @@ export function Navbar() {
     </nav>
   )
 }
+
+

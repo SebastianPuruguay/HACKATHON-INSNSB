@@ -1,12 +1,12 @@
-import { Building2, Focus, MapPin, UsersRound } from 'lucide-react'
+﻿import { Building2, Focus, MapPin, UsersRound } from 'lucide-react'
 import fachadaInsnsb from '../assets/insnsb.png'
 import { Reveal } from './Reveal'
 
 const details = [
-  { icon: Building2, label: 'Modalidad', value: 'Híbrida: actividades virtuales y presenciales' },
+  { icon: Building2, label: 'Modalidad', value: 'HÃ­brida: actividades virtuales y presenciales' },
   { icon: MapPin, label: 'Sedes', value: 'Espacios de instituciones aliadas y plataformas digitales' },
   { icon: UsersRound, label: 'Equipos', value: 'Multidisciplinarios, de 4 a 5 integrantes' },
-  { icon: Focus, label: 'Enfoque', value: 'Soluciones innovadoras con potencial de implementación real' },
+  { icon: Focus, label: 'Enfoque', value: 'Soluciones innovadoras con potencial de implementaciÃ³n real' },
 ]
 
 export function About() {
@@ -15,14 +15,14 @@ export function About() {
       <div className="dot-grid pointer-events-none absolute top-20 left-8 h-52 w-52 opacity-15 [mask-image:radial-gradient(circle,black,transparent_70%)]" />
       <div className="section-shell relative grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
         <Reveal>
-          <span className="section-eyebrow">Acerca de la Hackatón</span>
+          <span className="section-eyebrow">Acerca de la HackatÃ³n</span>
           <h2 className="max-w-3xl font-display text-4xl leading-[1.05] font-semibold tracking-[-0.04em] text-white sm:text-5xl">
-            Un entorno colaborativo para abordar desafíos prioritarios
+            Un entorno colaborativo para abordar desafÃ­os prioritarios
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300">
-            La Hackatón en Salud Pediátrica INSNSB conecta conocimiento académico,
+            La HackatÃ³n en Salud PediÃ¡trica INSNSB conecta conocimiento acadÃ©mico,
             experiencia del sector salud y talento innovador para co-crear propuestas
-            integrales, viables y orientadas a generar impacto real en el sistema pediátrico peruano.
+            integrales, viables y orientadas a generar impacto real en el sistema pediÃ¡trico peruano.
           </p>
         </Reveal>
 
@@ -31,7 +31,7 @@ export function About() {
             <div className="relative aspect-[16/10] overflow-hidden rounded-[28px]">
               <img
                 src={fachadaInsnsb}
-                alt="Fachada del Instituto Nacional de Salud del Niño San Borja"
+                alt="Fachada del Instituto Nacional de Salud del NiÃ±o San Borja"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/30 via-transparent to-violet-700/20" />
@@ -71,3 +71,5 @@ export function About() {
     </section>
   )
 }
+
+

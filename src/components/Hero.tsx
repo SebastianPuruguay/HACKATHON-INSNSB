@@ -1,4 +1,4 @@
-import { ArrowRight, FileText, Info } from 'lucide-react'
+﻿import { ArrowRight, FileText, Info } from 'lucide-react'
 import { motion } from 'motion/react'
 import { Navbar } from './Navbar'
 
@@ -29,22 +29,22 @@ export function Hero() {
 
           <div className="relative z-20 flex flex-1 flex-col items-start justify-center px-7 pt-16 pb-12 md:px-16 md:pt-20 lg:justify-start lg:pb-40">
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: 'easeOut' }} className="max-w-5xl">
-              <p className="text-xs font-semibold tracking-[0.16em] text-indigo-200 uppercase">Hackatón en Salud Pediátrica INSNSB</p>
+              <p className="text-xs font-semibold tracking-[0.16em] text-indigo-200 uppercase">HackatÃ³n en Salud PediÃ¡trica INSNSB</p>
               <h1 className="mt-5 max-w-5xl font-display text-[46px] leading-[0.92] font-bold tracking-[-0.065em] text-white drop-shadow-[0_2px_20px_rgba(15,23,42,0.8)] md:text-[68px] lg:text-[82px]">
                 Innovando por la{' '}
-                <span className="bg-gradient-to-r from-blue-300 via-indigo-300 to-violet-300 bg-clip-text text-transparent">salud de los niños</span>{' '}
-                del Perú
+                <span className="bg-gradient-to-r from-blue-300 via-indigo-300 to-violet-300 bg-clip-text text-transparent">salud de los niÃ±os</span>{' '}
+                del PerÃº
               </h1>
               <p className="mt-6 max-w-3xl text-[15px] leading-7 font-medium text-slate-300 md:text-[17px]">
-                Co-creamos soluciones innovadoras, viables y con potencial de implementación real frente a desafíos prioritarios del sistema de salud pediátrico peruano.
+                Co-creamos soluciones innovadoras, viables y con potencial de implementaciÃ³n real frente a desafÃ­os prioritarios del sistema de salud pediÃ¡trico peruano.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <motion.a href="#inscripcion" whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.98 }} className="innovation-gradient group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(79,70,229,0.4)] md:px-8 md:py-4">
-                  Inscribirme al evento
+                <motion.a href="#interes" whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.98 }} className="innovation-gradient group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(79,70,229,0.4)] md:px-8 md:py-4">
+                  Manifestar interés
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </motion.a>
                 <motion.a href="#desafios" whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.98 }} className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.07] px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-xl transition-all hover:border-indigo-400/60 hover:bg-white/12 md:px-8 md:py-4">
-                  Ver desafíos
+                  Ver desafÃ­os
                 </motion.a>
                 <motion.a href="/docs/bases-hackathon.pdf" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.98 }} className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-slate-950/35 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-xl transition-all hover:bg-white/10 md:px-8 md:py-4">
                   <FileText className="h-4 w-4" />
@@ -58,7 +58,7 @@ export function Hero() {
                 <Info className="mt-0.5 h-5 w-5 shrink-0 text-indigo-300" />
                 <div>
                   <p className="text-xs font-semibold tracking-[0.12em] text-indigo-200 uppercase">Acerca del evento</p>
-                  <p className="mt-2 text-sm leading-6 text-white/75">Espacio intensivo, híbrido y multidisciplinario para co-crear soluciones innovadoras frente a desafíos prioritarios de la salud pediátrica peruana.</p>
+                  <p className="mt-2 text-sm leading-6 text-white/75">Espacio intensivo, hÃ­brido y multidisciplinario para co-crear soluciones innovadoras frente a desafÃ­os prioritarios de la salud pediÃ¡trica peruana.</p>
                 </div>
               </div>
             </motion.div>
@@ -68,3 +68,5 @@ export function Hero() {
     </section>
   )
 }
+
+
