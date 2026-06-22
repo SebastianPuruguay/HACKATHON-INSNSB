@@ -19,6 +19,7 @@ const HEADERS = [
   'Celular',
   'Perfil',
   'Ciudad o región',
+  'Distrito',
   'Desafíos de interés',
   'Ideas, preguntas u opiniones',
   'Consentimiento',
@@ -47,6 +48,7 @@ function doPost(e) {
         clean_(data.phone),
         clean_(data.profile),
         clean_(data.city),
+        clean_(data.district),
         Array.isArray(data.interests) ? data.interests.join(' | ') : clean_(data.interests),
         clean_(data.comments),
         data.consent === true ? 'Sí' : 'No',
@@ -72,11 +74,15 @@ function getOrCreateSheet_() {
 }
 
 function ensureHeaders_(sheet) {
-  if (sheet.getLastRow() !== 0) return;
-  sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
-  sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
-  sheet.setFrozenRows(1);
-  sheet.autoResizeColumns(1, HEADERS.length);
+  const headerRange = sheet.getRange(1, 1, 1, HEADERS.length);
+  const currentHeaders = headerRange.getValues()[0];
+
+  if (currentHeaders.join('|') !== HEADERS.join('|')) {
+    headerRange.setValues([HEADERS]);
+    headerRange.setFontWeight('bold');
+    sheet.setFrozenRows(1);
+    sheet.autoResizeColumns(1, HEADERS.length);
+  }
 }
 
 function parsePayload_(e) {
@@ -103,4 +109,5 @@ function jsonResponse_(payload) {
     .createTextOutput(JSON.stringify(payload))
     .setMimeType(ContentService.MimeType.JSON);
 }
+
 

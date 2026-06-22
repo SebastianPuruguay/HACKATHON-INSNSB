@@ -39,7 +39,7 @@ export const challenges = [
   {
     id: 'sanarte',
     icon: UsersRound,
-    title: 'Sanarte: Cuidando a los que nos cuidan',
+    title: 'Sanarte: Emociones que sanan',
     description: '¿Cómo podríamos fortalecer el cuidado del talento humano para que el personal asistencial y administrativo pueda alcanzar un bienestar integral, equilibrado y sostenible?',
     color: 'bg-rose-400/10 text-rose-300 border border-rose-400/20',
   },
