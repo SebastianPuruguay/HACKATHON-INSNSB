@@ -1,6 +1,6 @@
 ﻿import { CalendarDays, FileText, Sparkles, UsersRound } from 'lucide-react'
 import fallbackEventBanner from '../assets/HACKATONFINAL.png'
-const eventBanner = 'https://portal.insnsb.gob.pe/docencia/wp-content/uploads/HACKATON.png'
+const eventBanner = 'https://portal.insnsb.gob.pe/docencia/wp-content/uploads/HACKATONFINAL.png'
 const eventpdf = 'https://portal.insnsb.gob.pe/docencia/wp-content/uploads/DesafiosHackaton.pdf'
 import { ChallengeAccordion } from './ChallengeAccordion'
 import { InterestForm } from './InterestForm'
