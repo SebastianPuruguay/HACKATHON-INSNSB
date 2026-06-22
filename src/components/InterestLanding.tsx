@@ -50,7 +50,7 @@ export function InterestLanding() {
         <div className="dot-mesh-fade pointer-events-none absolute inset-0 opacity-35" />
         <div className="relative mx-auto max-w-5xl px-5 sm:px-6">
           <div className="mb-10 max-w-3xl">
-            <p className="text-xs font-bold tracking-[0.18em] text-[#f58220] uppercase">
+            <p className="text-xs font-bold tracking-[0.18em] text-[#a7a302] uppercase">
               Desafíos propuestos
             </p>
             <h1 className="mt-4 font-display text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">

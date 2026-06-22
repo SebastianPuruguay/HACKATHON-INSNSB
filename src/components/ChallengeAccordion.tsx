@@ -15,7 +15,7 @@ export function ChallengeAccordion() {
           <article key={challenge.id} className="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.05] backdrop-blur-xl transition-colors hover:border-[#ec008c]/45">
             <button type="button" onClick={() => setOpenId(isOpen ? null : challenge.id)} aria-expanded={isOpen} className="flex w-full items-center gap-4 p-5 text-left sm:p-6">
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#ec008c]/25 to-[#f58220]/25 text-white"><Icon className="h-5 w-5" /></span>
-              <span className="min-w-0 flex-1"><span className="mb-1 block text-xs font-semibold tracking-[0.14em] text-[#f58220] uppercase">Desafío {index + 1}</span><span className="font-display text-base font-semibold leading-6 text-white sm:text-lg">{challenge.title}</span></span>
+              <span className="min-w-0 flex-1"><span className="mb-1 block text-xs font-semibold tracking-[0.14em] text-[#a7a302] uppercase">Desafío {index + 1}</span><span className="font-display text-base font-semibold leading-6 text-white sm:text-lg">{challenge.title}</span></span>
               <ChevronDown className={`h-5 w-5 shrink-0 text-[#ec008c] transition-transform ${isOpen ? 'rotate-180' : ''}`} />
             </button>
             <AnimatePresence initial={false}>

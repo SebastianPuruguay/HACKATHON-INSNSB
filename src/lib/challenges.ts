@@ -11,7 +11,7 @@ export const challenges = [
   {
     id: 'cardio-alerta',
     icon: HeartPulse,
-    title: 'Cardio Alerta Perú: Cuidando Corazones desde el primer latido',
+    title: 'Cardio Alerta Perú: cuidando corazones desde el primer latido',
     description: '¿Cómo podríamos mejorar el tamizaje y la identificación temprana de pacientes pediátricos con sospecha de cardiopatías críticas, para que sean orientados y derivados de manera oportuna y segura, logrando reducir retrasos en la evaluación y atención especializada?',
     color: 'bg-indigo-400/10 text-indigo-300 border border-indigo-400/20',
   },
@@ -39,7 +39,7 @@ export const challenges = [
   {
     id: 'sanarte',
     icon: UsersRound,
-    title: 'Sanarte: Emociones que sanan',
+    title: 'Sanarte: emociones que sanan',
     description: '¿Cómo podríamos fortalecer el cuidado del talento humano para que el personal asistencial y administrativo pueda alcanzar un bienestar integral, equilibrado y sostenible?',
     color: 'bg-rose-400/10 text-rose-300 border border-rose-400/20',
   },
