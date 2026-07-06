@@ -1,60 +1,67 @@
-﻿import { ArrowRight, Menu, X } from 'lucide-react'
+import { ArrowRight, Menu, X } from 'lucide-react'
 import { useState } from 'react'
-import logoSymbolInsnsb from '../assets/logoinsnsb2.png'
 
-const links = [
-  { label: 'Inicio', href: '#inicio' },
-  { label: 'Acerca', href: '#acerca' },
-  { label: 'DesafÃ­os', href: '#desafios' },
-  { label: 'Participantes', href: '#participantes' },
-  { label: 'Cronograma', href: '#cronograma' },
-  { label: 'EvaluaciÃ³n', href: '#evaluacion' },
-  { label: 'Bases', href: '#bases' },
+export type LandingPageKey = 'inicio' | 'desafios' | 'cronograma' | 'participantes' | 'aliados'
+
+type NavbarProps = {
+  activePage: LandingPageKey
+  onNavigate: (page: LandingPageKey) => void
+}
+
+const links: Array<{ label: string; page: LandingPageKey }> = [
+  { label: 'Inicio', page: 'inicio' },
+  { label: 'Desafíos', page: 'desafios' },
+  { label: 'Cronograma', page: 'cronograma' },
+  { label: 'Participantes', page: 'participantes' },
+  { label: 'Aliados', page: 'aliados' },
 ]
 
-export function Navbar() {
+export function Navbar({ activePage, onNavigate }: NavbarProps) {
   const [open, setOpen] = useState(false)
 
-  return (
-    <nav className="relative z-30 px-5 pt-5 md:px-10 md:pt-7" aria-label="NavegaciÃ³n principal">
-      <div className="flex items-center justify-between rounded-full border border-white/15 bg-slate-950/60 px-4 py-3 text-white shadow-[0_18px_55px_rgba(2,6,23,0.4)] backdrop-blur-2xl">
-        <a href="#inicio" className="flex items-center gap-3" aria-label="Ir al inicio">
-          <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-white/20 bg-white/90 shadow-sm">
-            <img
-              src={logoSymbolInsnsb}
-              alt="Logo del Instituto Nacional de Salud del NiÃ±o San Borja"
-              className="h-8 w-8 object-contain"
-            />
-          </span>
-          <span className="hidden text-left leading-tight sm:block">
-            <span className="block font-display text-sm font-semibold">HackatÃ³n en Salud PediÃ¡trica</span>
-            <span className="block text-xs text-white/60">INSNSB</span>
-          </span>
-        </a>
+  const handleNavigate = (page: LandingPageKey) => {
+    onNavigate(page)
+    setOpen(false)
+  }
 
-        <div className="hidden items-center gap-4 xl:flex">
-          {links.map((link) => (
-            <a key={link.href} href={link.href} className="text-[12px] font-medium text-white/70 transition-colors hover:text-white">
-              {link.label}
-            </a>
-          ))}
-          {/* Future section: event recap after the hackathon */}
-          <a href="#recap" className="flex items-center gap-1.5 text-[12px] font-medium text-white/70 transition-colors hover:text-white">
-            Recap
-            <span className="rounded-full bg-white/10 px-1.5 py-0.5 text-[8px] text-indigo-200">PrÃ³ximamente</span>
-          </a>
+  return (
+    <nav className="fixed top-0 right-0 left-0 z-50 px-4 pt-4 md:px-8" aria-label="Navegación principal">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-full border border-white/15 bg-[#0e0931]/82 px-4 py-3 text-white shadow-[0_18px_55px_rgba(35,4,67,0.42)] backdrop-blur-2xl">
+        <div className="hidden w-[148px] sm:block" aria-hidden="true" />
+
+        <div className="hidden flex-1 items-center justify-center gap-1 xl:flex">
+          {links.map((link) => {
+            const isActive = activePage === link.page
+            return (
+              <button
+                key={link.page}
+                type="button"
+                onClick={() => handleNavigate(link.page)}
+                className={`rounded-full px-4 py-2 text-[12px] font-semibold transition-all ${
+                  isActive
+                    ? 'bg-white text-[#230443] shadow-[0_10px_26px_rgba(236,0,140,0.18)]'
+                    : 'text-white/70 hover:bg-white/10 hover:text-white'
+                }`}
+              >
+                {link.label}
+              </button>
+            )
+          })}
         </div>
 
-        <div className="flex items-center gap-2">
-          <a href="#interes" className="innovation-gradient group hidden items-center gap-2 rounded-full px-5 py-2 text-[13px] font-semibold text-white shadow-[0_10px_30px_rgba(79,70,229,0.35)] transition-all hover:brightness-110 sm:flex">
-            Me interesa
+        <div className="flex flex-1 items-center justify-end gap-2 sm:flex-none">
+          <a
+            href="/interes"
+            className="innovation-gradient group hidden items-center gap-2 rounded-full px-5 py-2 text-[13px] font-semibold text-white shadow-[0_10px_30px_rgba(236,0,140,0.32)] transition-all hover:brightness-110 sm:flex"
+          >
+            Inscripción
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
           </a>
           <button
             type="button"
             onClick={() => setOpen((current) => !current)}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/[0.06] text-white backdrop-blur-xl xl:hidden"
-            aria-label={open ? 'Cerrar menÃº' : 'Abrir menÃº'}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-[#ec008c]/10 text-white backdrop-blur-xl xl:hidden"
+            aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={open}
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -63,16 +70,31 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="absolute top-[84px] right-5 left-5 rounded-3xl border border-white/15 bg-slate-950/90 p-3 text-white shadow-2xl backdrop-blur-2xl xl:hidden">
-          {[...links, { label: 'Recap Â· PrÃ³ximamente', href: '#recap' }].map((link) => (
-            <a key={link.href} href={link.href} onClick={() => setOpen(false)} className="block rounded-2xl px-4 py-3 text-sm font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white">
-              {link.label}
-            </a>
-          ))}
+        <div className="absolute top-[82px] right-4 left-4 mx-auto max-w-7xl rounded-3xl border border-white/15 bg-[#0e0931]/95 p-3 text-white shadow-2xl backdrop-blur-2xl xl:hidden">
+          {links.map((link) => {
+            const isActive = activePage === link.page
+            return (
+              <button
+                key={link.page}
+                type="button"
+                onClick={() => handleNavigate(link.page)}
+                className={`block w-full rounded-2xl px-4 py-3 text-left text-sm font-medium transition-colors ${
+                  isActive ? 'bg-white text-[#230443]' : 'text-white/70 hover:bg-white/10 hover:text-white'
+                }`}
+              >
+                {link.label}
+              </button>
+            )
+          })}
+          <a
+            href="/interes"
+            className="innovation-gradient mt-2 flex w-full items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-semibold text-white"
+          >
+            Inscripción
+            <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       )}
     </nav>
   )
 }
-
-

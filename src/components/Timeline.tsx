@@ -1,55 +1,154 @@
-import { Award, CalendarDays, Presentation, Search, UsersRound, Workflow, Zap } from 'lucide-react'
+import { Award, CalendarDays, Search, UsersRound, Workflow, Zap } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import { Reveal } from './Reveal'
 
-const schedule = [
-  { title: 'Planificación', date: 'Junio de 2026', description: 'Plan, programa, presupuesto y logística.', icon: Workflow },
-  { title: 'Convocatoria', date: '22 jun. – 24 jul. 2026', description: 'Inscripciones y difusión institucional.', icon: CalendarDays },
-  { title: 'Mentores y jurados', date: '15 – 29 jun. 2026', description: 'Confirmación de especialistas clínicos y tecnológicos.', icon: UsersRound },
-  { title: 'Selección', date: '25 – 31 jul. 2026', description: 'Revisión de postulaciones y anuncio de participantes.', icon: Search },
-  { title: 'Ejecución de la Hackatón', date: '3 – 21 ago. 2026', description: 'Inducción, exploración, desarrollo, validación y pitch.', icon: Zap },
-  { title: 'Post-Hackatón', date: '24 – 31 ago. 2026', description: 'Resultados, lecciones aprendidas y seguimiento.', icon: Award },
-]
+type ScheduleItem = {
+  title: string
+  date: string
+  description: string
+  icon: LucideIcon
+  position: string
+  labelSide: 'top' | 'bottom'
+}
 
-const methodology = ['Inducción y presentación de desafíos', 'Talleres de entendimiento', 'Desarrollo de soluciones', 'Mentorías especializadas', 'Presentación final o pitch']
+const schedule: ScheduleItem[] = [
+  {
+    title: 'Planificación',
+    date: 'Junio 2026',
+    description: 'Programa, presupuesto y logística.',
+    icon: Workflow,
+    position: 'left-[11%] top-[55%]',
+    labelSide: 'top',
+  },
+  {
+    title: 'Convocatoria',
+    date: '22 jun. - 24 jul.',
+    description: 'Invitación y difusión institucional.',
+    icon: CalendarDays,
+    position: 'left-[25%] top-[34%]',
+    labelSide: 'bottom',
+  },
+  {
+    title: 'Mentores',
+    date: '15 - 29 jun.',
+    description: 'Soporte clínico y tecnológico.',
+    icon: UsersRound,
+    position: 'left-[41%] top-[58%]',
+    labelSide: 'top',
+  },
+  {
+    title: 'Selección',
+    date: '25 - 31 jul.',
+    description: 'Revisión y anuncio de participantes.',
+    icon: Search,
+    position: 'left-[58%] top-[33%]',
+    labelSide: 'bottom',
+  },
+  {
+    title: 'Ejecución',
+    date: '3 - 21 ago.',
+    description: 'Exploración, prototipo, validación y pitch.',
+    icon: Zap,
+    position: 'left-[74%] top-[56%]',
+    labelSide: 'top',
+  },
+  {
+    title: 'Post-Hackatón',
+    date: '24 - 31 ago.',
+    description: 'Resultados y próximos pasos.',
+    icon: Award,
+    position: 'left-[90%] top-[37%]',
+    labelSide: 'bottom',
+  },
+]
 
 export function Timeline() {
   return (
-    <section id="cronograma" className="relative overflow-hidden bg-gradient-to-br from-[#080d2b] via-[#111453] to-[#351065] py-24 text-white sm:py-32">
+    <section id="cronograma" className="relative overflow-hidden bg-gradient-to-br from-[#0b0c3b] via-[#230443] to-[#5e0f90] py-12 text-white sm:py-14">
       <div className="circuit-pattern pointer-events-none absolute inset-0 opacity-20" />
       <div className="dot-mesh-fade pointer-events-none absolute inset-0 z-0 opacity-60" />
       <div className="section-shell relative z-10">
-        <Reveal className="max-w-3xl">
-          <span className="section-eyebrow border-white/10 bg-white/10 text-violet-200">Cronograma oficial</span>
-          <h2 className="font-display text-4xl leading-tight font-semibold tracking-[-0.04em] sm:text-5xl">De la convocatoria a la Post-Hackatón</h2>
-          <p className="mt-5 leading-7 text-slate-300">La modalidad híbrida combina actividades virtuales y presenciales durante las etapas oficiales del evento.</p>
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <span className="section-eyebrow border-white/10 bg-white/10 text-[#f58220]">Cronograma oficial</span>
+          <h2 className="font-display text-4xl leading-tight font-semibold tracking-[-0.04em] sm:text-5xl">
+          Ruta de avance
+          </h2>
         </Reveal>
 
-        <div className="relative mt-14">
-          <div className="absolute top-5 bottom-5 left-5 w-px bg-gradient-to-b from-blue-400 via-indigo-500 to-violet-400 lg:top-5 lg:right-5 lg:bottom-auto lg:left-5 lg:h-px lg:w-auto" />
-          <div className="relative grid gap-8 lg:grid-cols-6 lg:gap-5">
+        <Reveal delay={0.1}>
+          <div className="relative left-1/2 mt-6 hidden min-h-[520px] w-[min(1760px,calc(100vw-2rem))] -translate-x-1/2 overflow-hidden rounded-[48px] border border-white/10 bg-[#0b0c3b]/52 px-12 pt-2 pb-0 shadow-[0_24px_80px_rgba(236,0,140,0.14)] backdrop-blur-xl lg:block xl:min-h-[540px] xl:px-16">
+            <div className="absolute inset-0 soft-grid opacity-20" />
+            <div className="absolute inset-x-8 top-1/2 h-px bg-white/[0.03]" />
+
+            <svg className="absolute inset-x-10 top-[82px] h-[330px] w-[calc(100%-5rem)] overflow-visible xl:inset-x-14 xl:w-[calc(100%-7rem)]" viewBox="0 0 1000 340" fill="none" preserveAspectRatio="none" aria-hidden="true">
+              <path
+                d="M 18 222 C 122 45 236 62 322 166 C 424 294 523 300 610 126 C 690 -18 815 28 902 152 C 948 220 972 236 992 230"
+                stroke="rgba(255,255,255,0.12)"
+                strokeWidth="30"
+                strokeLinecap="round"
+              />
+              <path
+                d="M 18 222 C 122 45 236 62 322 166 C 424 294 523 300 610 126 C 690 -18 815 28 902 152 C 948 220 972 236 992 230"
+                stroke="url(#timelineGradient)"
+                strokeWidth="9"
+                strokeLinecap="round"
+              />
+              <defs>
+                <linearGradient id="timelineGradient" x1="18" y1="222" x2="992" y2="230" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#ec008c" />
+                  <stop offset="0.48" stopColor="#f58220" />
+                  <stop offset="1" stopColor="#ec008c" />
+                </linearGradient>
+              </defs>
+            </svg>
+
             {schedule.map((step, index) => {
               const Icon = step.icon
               return (
-                <Reveal key={step.title} delay={index * 0.05}>
-                  <article className="relative pl-16 lg:pl-0">
-                    <span className="absolute top-0 left-0 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-indigo-500/30 font-display text-sm font-semibold text-violet-200 shadow-[0_0_20px_rgba(129,140,248,0.45),0_0_0_7px_rgba(255,255,255,0.04)] backdrop-blur-lg lg:relative lg:mb-8">{index + 1}</span>
-                    <Icon className="mb-4 hidden h-5 w-5 text-violet-200 lg:block" />
-                    <p className="text-[11px] font-semibold tracking-[0.1em] text-violet-200 uppercase">{step.date}</p>
-                    <h3 className="mt-3 font-display text-lg leading-snug font-semibold">{step.title}</h3>
-                    <p className="mt-2 text-xs leading-6 text-slate-400">{step.description}</p>
-                  </article>
-                </Reveal>
+                <div key={step.title} className={`absolute ${step.position}`}>
+                  <div className="relative -translate-x-1/2 -translate-y-1/2">
+                    <div className={`absolute left-1/2 w-px -translate-x-1/2 bg-white/15 ${step.labelSide === 'top' ? 'bottom-[4.5rem] h-16' : 'top-[4.5rem] h-16'}`} />
+                    <div className="relative z-10 flex h-18 w-18 items-center justify-center rounded-full border border-white/25 bg-[#0e0931] text-[#f58220] shadow-[0_0_30px_rgba(245,130,32,0.38),0_0_0_12px_rgba(255,255,255,0.04)]">
+                      <Icon className="h-7 w-7" />
+                    </div>
+                    <article className={`absolute left-1/2 w-64 -translate-x-1/2 rounded-3xl border border-white/10 bg-[#230443]/82 p-4 text-center shadow-[0_18px_50px_rgba(0,0,0,0.22)] backdrop-blur-xl xl:w-72 ${step.labelSide === 'top' ? 'bottom-30' : 'top-30'}`}>
+                      <p className="text-[10px] font-bold tracking-[0.16em] text-[#f58220] uppercase">
+                        {step.date}
+                      </p>
+                      <h3 className="mt-2 font-display text-lg font-semibold text-white">
+                        {index + 1}. {step.title}
+                      </h3>
+                      <p className="mt-2 text-xs leading-5 text-slate-300">{step.description}</p>
+                    </article>
+                  </div>
+                </div>
               )
             })}
           </div>
-        </div>
-
-        <Reveal className="mt-16 rounded-[32px] border border-white/10 bg-slate-950/30 p-6 backdrop-blur-xl sm:p-8">
-          <div className="flex items-center gap-3"><Presentation className="h-5 w-5 text-indigo-300" /><h3 className="font-display text-xl font-semibold">Metodología intensiva y colaborativa</h3></div>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-            {methodology.map((stage, index) => <div key={stage} className="rounded-2xl border border-white/10 bg-white/[0.05] p-4 text-sm leading-6 text-slate-300"><span className="mb-2 block text-xs font-semibold text-indigo-300">Fase {index + 1}</span>{stage}</div>)}
-          </div>
         </Reveal>
+
+        <div className="relative mt-8 space-y-4 pl-2 lg:hidden">
+          <div className="absolute bottom-8 left-8 top-8 w-1 rounded-full bg-gradient-to-b from-[#ec008c] via-[#f58220] to-[#ec008c]" />
+          {schedule.map((step, index) => {
+            const Icon = step.icon
+            return (
+              <Reveal key={step.title} delay={index * 0.05}>
+                <article className="relative ml-8 overflow-hidden rounded-[26px] border border-white/10 bg-[#0b0c3b]/66 p-4 shadow-[0_18px_50px_rgba(0,0,0,0.18)] backdrop-blur-xl sm:p-5">
+                  <span className="absolute -left-8 top-5 flex h-12 w-12 items-center justify-center rounded-full border border-[#f58220]/30 bg-[#0e0931] text-[#f58220] shadow-[0_0_24px_rgba(245,130,32,0.24)]">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <div className="pl-2">
+                    <p className="text-[11px] font-semibold tracking-[0.1em] text-[#f58220] uppercase">{step.date}</p>
+                    <h3 className="mt-2 font-display text-lg leading-tight font-semibold sm:text-xl">
+                      {index + 1}. {step.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-400">{step.description}</p>
+                  </div>
+                </article>
+              </Reveal>
+            )
+          })}
+        </div>
       </div>
     </section>
   )

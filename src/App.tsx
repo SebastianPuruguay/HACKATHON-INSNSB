@@ -2,7 +2,9 @@
 import { InterestLanding } from './components/InterestLanding'
 
 function App() {
-  return window.location.pathname === '/archivo/landing-completa' ? <FullLanding /> : <InterestLanding />
+  const isInterestLanding = window.location.pathname.endsWith('/interes')
+
+  return isInterestLanding ? <InterestLanding /> : <FullLanding />
 }
 
 export default App

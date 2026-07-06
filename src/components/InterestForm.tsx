@@ -11,6 +11,8 @@ const initialForm = {
   email: "",
   phone: "",
   profile: "",
+  university: "",
+  otherUniversity: "",
   city: "",
   district: "",
   interests: [] as string[],
@@ -20,6 +22,42 @@ const initialForm = {
 
 const interestFormEndpoint =
   "https://script.google.com/macros/s/AKfycbzN4xeod0qMbNdYbpeTrW43S-XSEbkfn5sIj5gO8sKpBFMze-k99h6wbOIDDRtbEG7HQA/exec";
+
+const OTHER_UNIVERSITY = "OTRA";
+
+const universities = [
+  "PONTIFICIA UNIVERSIDAD CATOLICA DEL PERU",
+  "UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS",
+  "UNIVERSIDAD PERUANA CAYETANO HEREDIA",
+  "UNIVERSIDAD NACIONAL DE INGENIERIA",
+  "UNIVERSIDAD NACIONAL AGRARIA LA MOLINA",
+  "UNIVERSIDAD DEL PACIFICO",
+  "UNIVERSIDAD DE LIMA",
+  "UNIVERSIDAD DE PIURA",
+  "UNIVERSIDAD PERUANA DE CIENCIAS APLICADAS",
+  "UNIVERSIDAD DE SAN MARTIN DE PORRES",
+  "UNIVERSIDAD CIENTIFICA DEL SUR",
+  "UNIVERSIDAD SAN IGNACIO DE LOYOLA",
+  "UNIVERSIDAD NACIONAL DE SAN AGUSTIN DE AREQUIPA",
+  "UNIVERSIDAD ESAN",
+  "UNIVERSIDAD RICARDO PALMA",
+  "UNIVERSIDAD NACIONAL DE SAN ANTONIO ABAD DEL CUSCO",
+  "UNIVERSIDAD PRIVADA ANTENOR ORREGO",
+  "UNIVERSIDAD CONTINENTAL",
+  "UNIVERSIDAD PRIVADA DEL NORTE",
+  "UNIVERSIDAD CESAR VALLEJO",
+  "UNIVERSIDAD CATOLICA SAN PABLO",
+  "UNIVERSIDAD NACIONAL DE TRUJILLO",
+  "UNIVERSIDAD TECNOLOGICA DEL PERU",
+  "UNIVERSIDAD ANDINA DEL CUSCO",
+  "UNIVERSIDAD CATOLICA DE SANTA MARIA",
+  "UNIVERSIDAD PRIVADA DE TACNA",
+  "UNIVERSIDAD NACIONAL DEL ALTIPLANO",
+  "UNIVERSIDAD SENOR DE SIPAN",
+  "UNIVERSIDAD NACIONAL DE PIURA",
+  "UNIVERSIDAD ALAS PERUANAS",
+  "UNIVERSIDAD FEDERICO VILLARREAL",
+].sort((first, second) => first.localeCompare(second, "es"));
 
 export function InterestForm() {
   const [form, setForm] = useState(initialForm);
@@ -46,10 +84,17 @@ export function InterestForm() {
 
     setStatus("sending");
     try {
+      const submission = {
+        ...form,
+        university:
+          form.university === OTHER_UNIVERSITY
+            ? form.otherUniversity
+            : form.university,
+      };
       const response = await fetch(interestFormEndpoint, {
         method: "POST",
         headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify(form),
+        body: JSON.stringify(submission),
       });
       const result = (await response.json()) as {
         ok?: boolean;
@@ -99,7 +144,7 @@ export function InterestForm() {
                     ¿Qué buscamos conocer?
                   </p>
                   <ul className="mt-3 space-y-2 text-slate-300">
-                    <li>Tu perfil, ciudad y distrito de procedencia.</li>
+                    <li>Tu perfil, universidad y lugar de procedencia.</li>
                     <li>Los desafíos que más te interesan.</li>
                     <li>Ideas, preguntas u opiniones para el evento.</li>
                   </ul>
@@ -177,6 +222,49 @@ export function InterestForm() {
                     <option>Otro perfil afín</option>
                   </select>
                 </label>
+                <label className="sm:col-span-2">
+                  <span className="text-sm font-medium text-white">
+                    Universidad
+                  </span>
+                  <select
+                    value={form.university}
+                    onChange={(event) =>
+                      setForm({
+                        ...form,
+                        university: event.target.value,
+                        otherUniversity:
+                          event.target.value === OTHER_UNIVERSITY
+                            ? form.otherUniversity
+                            : "",
+                      })
+                    }
+                    className="mt-2 w-full rounded-2xl border border-white/10 bg-[#1d1639] px-4 py-3 text-sm text-white outline-none transition focus:border-[#ec008c]"
+                  >
+                    <option value="">Selecciona una opción (opcional)</option>
+                    {universities.map((university) => (
+                      <option key={university} value={university}>
+                        {university}
+                      </option>
+                    ))}
+                    <option value={OTHER_UNIVERSITY}>Otra universidad</option>
+                  </select>
+                </label>
+                {form.university === OTHER_UNIVERSITY && (
+                  <label className="sm:col-span-2">
+                    <span className="text-sm font-medium text-white">
+                      Escribe el nombre de tu universidad *
+                    </span>
+                    <input
+                      required
+                      value={form.otherUniversity}
+                      onChange={(event) =>
+                        setForm({ ...form, otherUniversity: event.target.value })
+                      }
+                      className="mt-2 w-full rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3 text-sm text-white outline-none transition focus:border-[#ec008c] focus:ring-2 focus:ring-[#ec008c]/25"
+                      placeholder="Escribe el nombre de tu universidad"
+                    />
+                  </label>
+                )}
                 <label>
                   <span className="text-sm font-medium text-white">
                     Ciudad o región
