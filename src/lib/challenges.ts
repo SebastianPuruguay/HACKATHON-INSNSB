@@ -25,7 +25,7 @@ export const challenges = [
   {
     id: 'neuroalianza',
     icon: BrainCircuit,
-    title: 'Neuroalianza: ruta clínica multidisciplinaria para conectar salud, familia y comunidad',
+    title: 'Neurodesarrollo: ruta clínica multidisciplinaria para conectar salud, familia y comunidad',
     description: '¿Cómo podríamos facilitar que niños peruanos con alteraciones del neurodesarrollo accedan a diagnóstico oportuno y atención integral, mediante soluciones tecnológicas que fortalezcan la intervención temprana, reduzcan las barreras geográficas y mejoren la adherencia al tratamiento?',
     color: 'bg-[#ec008c]/10 text-[#ffb6df] border border-[#ec008c]/25',
   },
