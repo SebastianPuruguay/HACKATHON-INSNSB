@@ -68,7 +68,7 @@ export function Hero() {
           })}
         </div>
 
-        <div className="mt-4 flex">
+        <div className="mt-4 flex justify-center">
           <a
             href="/docs/bases-hackathon.pdf"
             target="_blank"
