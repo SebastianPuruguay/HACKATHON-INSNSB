@@ -54,7 +54,7 @@ export function FullLanding() {
     <main className="relative min-h-screen overflow-hidden bg-[#0b0c3b]">
       <div className="dot-mesh-fade pointer-events-none fixed inset-0 z-0 opacity-45" />
       <Navbar activePage={activePage} onNavigate={navigate} />
-      <div key={activePage} className="relative z-10 pt-24">
+      <div key={activePage} className="relative z-10 pt-20 sm:pt-24">
         {content}
         <Footer />
       </div>

@@ -64,35 +64,23 @@ const schedule: ScheduleItem[] = [
 
 export function Timeline() {
   return (
-    <section id="cronograma" className="relative overflow-hidden bg-gradient-to-br from-[#0b0c3b] via-[#230443] to-[#5e0f90] py-12 text-white sm:py-14">
-      <div className="circuit-pattern pointer-events-none absolute inset-0 opacity-20" />
-      <div className="dot-mesh-fade pointer-events-none absolute inset-0 z-0 opacity-60" />
+    <section id="cronograma" className="relative overflow-hidden bg-gradient-to-br from-[#0b0c3b] via-[#230443] to-[#5e0f90] py-9 text-white sm:py-14">
+      <div className="circuit-pattern pointer-events-none absolute inset-0 opacity-15" />
+      <div className="dot-mesh-fade pointer-events-none absolute inset-0 z-0 opacity-45" />
       <div className="section-shell relative z-10">
         <Reveal className="mx-auto max-w-3xl text-center">
           <span className="section-eyebrow border-white/10 bg-white/10 text-[#f58220]">Cronograma oficial</span>
-          <h2 className="font-display text-4xl leading-tight font-semibold tracking-[-0.04em] sm:text-5xl">
-          Ruta de avance
+          <h2 className="font-display text-3xl leading-tight font-semibold tracking-[-0.04em] sm:text-5xl">
+            Ruta de avance
           </h2>
         </Reveal>
 
         <Reveal delay={0.1}>
           <div className="relative left-1/2 mt-6 hidden min-h-[520px] w-[min(1760px,calc(100vw-2rem))] -translate-x-1/2 overflow-hidden rounded-[48px] border border-white/10 bg-[#0b0c3b]/52 px-12 pt-2 pb-0 shadow-[0_24px_80px_rgba(236,0,140,0.14)] backdrop-blur-xl lg:block xl:min-h-[540px] xl:px-16">
             <div className="absolute inset-0 soft-grid opacity-20" />
-            <div className="absolute inset-x-8 top-1/2 h-px bg-white/[0.03]" />
-
             <svg className="absolute inset-x-10 top-[82px] h-[330px] w-[calc(100%-5rem)] overflow-visible xl:inset-x-14 xl:w-[calc(100%-7rem)]" viewBox="0 0 1000 340" fill="none" preserveAspectRatio="none" aria-hidden="true">
-              <path
-                d="M 18 222 C 122 45 236 62 322 166 C 424 294 523 300 610 126 C 690 -18 815 28 902 152 C 948 220 972 236 992 230"
-                stroke="rgba(255,255,255,0.12)"
-                strokeWidth="30"
-                strokeLinecap="round"
-              />
-              <path
-                d="M 18 222 C 122 45 236 62 322 166 C 424 294 523 300 610 126 C 690 -18 815 28 902 152 C 948 220 972 236 992 230"
-                stroke="url(#timelineGradient)"
-                strokeWidth="9"
-                strokeLinecap="round"
-              />
+              <path d="M 18 222 C 122 45 236 62 322 166 C 424 294 523 300 610 126 C 690 -18 815 28 902 152 C 948 220 972 236 992 230" stroke="rgba(255,255,255,0.12)" strokeWidth="30" strokeLinecap="round" />
+              <path d="M 18 222 C 122 45 236 62 322 166 C 424 294 523 300 610 126 C 690 -18 815 28 902 152 C 948 220 972 236 992 230" stroke="url(#timelineGradient)" strokeWidth="9" strokeLinecap="round" />
               <defs>
                 <linearGradient id="timelineGradient" x1="18" y1="222" x2="992" y2="230" gradientUnits="userSpaceOnUse">
                   <stop stopColor="#ec008c" />
@@ -127,19 +115,19 @@ export function Timeline() {
           </div>
         </Reveal>
 
-        <div className="relative mt-8 space-y-4 pl-2 lg:hidden">
-          <div className="absolute bottom-8 left-8 top-8 w-1 rounded-full bg-gradient-to-b from-[#ec008c] via-[#f58220] to-[#ec008c]" />
+        <div className="relative mt-7 space-y-3 pl-8 lg:hidden">
+          <div className="absolute bottom-6 left-5 top-6 w-1 rounded-full bg-gradient-to-b from-[#ec008c] via-[#f58220] to-[#ec008c]" />
           {schedule.map((step, index) => {
             const Icon = step.icon
             return (
-              <Reveal key={step.title} delay={index * 0.05}>
-                <article className="relative ml-8 overflow-hidden rounded-[26px] border border-white/10 bg-[#0b0c3b]/66 p-4 shadow-[0_18px_50px_rgba(0,0,0,0.18)] backdrop-blur-xl sm:p-5">
-                  <span className="absolute -left-8 top-5 flex h-12 w-12 items-center justify-center rounded-full border border-[#f58220]/30 bg-[#0e0931] text-[#f58220] shadow-[0_0_24px_rgba(245,130,32,0.24)]">
+              <Reveal key={step.title} delay={index * 0.04}>
+                <article className="relative overflow-hidden rounded-[22px] border border-white/10 bg-[#0b0c3b]/66 p-4 shadow-[0_16px_42px_rgba(0,0,0,0.18)] backdrop-blur-xl">
+                  <span className="absolute -left-7 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-[#f58220]/30 bg-[#0e0931] text-[#f58220] shadow-[0_0_24px_rgba(245,130,32,0.24)]">
                     <Icon className="h-5 w-5" />
                   </span>
-                  <div className="pl-2">
-                    <p className="text-[11px] font-semibold tracking-[0.1em] text-[#f58220] uppercase">{step.date}</p>
-                    <h3 className="mt-2 font-display text-lg leading-tight font-semibold sm:text-xl">
+                  <div className="pl-1">
+                    <p className="text-[10px] font-bold tracking-[0.12em] text-[#f58220] uppercase">{step.date}</p>
+                    <h3 className="mt-1.5 font-display text-lg leading-tight font-semibold">
                       {index + 1}. {step.title}
                     </h3>
                     <p className="mt-2 text-sm leading-6 text-slate-400">{step.description}</p>

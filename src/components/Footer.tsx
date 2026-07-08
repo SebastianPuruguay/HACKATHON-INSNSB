@@ -1,57 +1,70 @@
-﻿import { FileText, Mail, MapPin, Phone } from 'lucide-react'
+import { FileText, Mail, MapPin, Phone } from 'lucide-react'
 import logoHorizontalInsnsb from '../assets/logoinsnsb.png'
 
 const footerLinks = [
-  { label: 'Acerca', href: '#acerca' },
+  { label: 'Inicio', href: '#inicio' },
   { label: 'Desafíos', href: '#desafios' },
-  { label: 'Participantes', href: '#participantes' },
   { label: 'Cronograma', href: '#cronograma' },
-  { label: 'Evaluación', href: '#evaluacion' },
+  { label: 'Participantes', href: '#participantes' },
+  { label: 'Aliados', href: '#aliados' },
 ]
 
-// Replace social media placeholders with official INSNSB links when confirmed.
 const socialLinks = [
-  { label: 'Facebook', href: '#' },
-  { label: 'Instagram', href: '#' },
-  { label: 'YouTube', href: '#' },
+  { label: 'Facebook', href: 'https://www.facebook.com/insnsanborja/' },
+  { label: 'Instagram', href: 'https://www.instagram.com/insnsanborja/' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@INSNSanBorjaOficial' },
 ]
 
 export function Footer() {
   return (
     <footer className="relative border-t border-white/[0.06] bg-[#0e0931]">
-      {/* Future section: event recap after the hackathon */}
-      <span id="recap" className="absolute top-0" />
-      <div className="section-shell py-14">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1fr_0.8fr]">
+      <div className="section-shell py-10 sm:py-14">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1fr_0.8fr] lg:gap-12">
           <div>
             <a href="#inicio" className="inline-flex flex-col items-start gap-4">
-              <span className="flex items-center justify-center rounded-2xl border border-slate-200 bg-white p-3 shadow-sm"><img src={logoHorizontalInsnsb} alt="Logo del Instituto Nacional de Salud del Niño San Borja" className="h-10 w-auto object-contain md:h-12" /></span>
+              <span className="flex items-center justify-center rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
+                <img src={logoHorizontalInsnsb} alt="Logo del Instituto Nacional de Salud del Niño San Borja" className="h-9 w-auto object-contain sm:h-12" />
+              </span>
               <span className="font-display text-lg font-semibold text-white">Hackatón Niño San Borja</span>
             </a>
-            <p className="mt-4 max-w-md text-sm leading-7 text-slate-400">Innovación, co-creación y colaboración multidisciplinaria para abordar desafíos prioritarios de la salud pediátrica peruana, con apoyo de PUCP, Universidad ESAN y SGTD-PCM.</p>
+            <p className="mt-4 max-w-md text-sm leading-7 text-slate-400">
+              Innovación, co-creación y colaboración multidisciplinaria para abordar desafíos prioritarios de la salud pediátrica peruana, con apoyo de PUCP, Universidad ESAN y SGTD-PCM.
+            </p>
           </div>
 
           <div>
             <h3 className="font-display text-sm font-semibold text-white">Contacto institucional</h3>
             <div className="mt-5 space-y-3 text-sm text-slate-400">
               <p className="flex gap-3"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#f58220]" />Av. Agustín de la Rosa Toro 1399, San Borja, Lima, Perú</p>
-              <p className="flex gap-3"><Phone className="h-4 w-4 shrink-0 text-[#f58220]" />Central: 2300600 · Informes: anexo 1000</p>
-              <p className="flex gap-3"><Mail className="h-4 w-4 shrink-0 text-[#f58220]" />Correo del evento: Por confirmar</p>
+              <p className="flex gap-3"><Phone className="h-4 w-4 shrink-0 text-[#f58220]" />Central: 2300600 · Informes: anexo 2042</p>
+              <p className="flex gap-3 break-all sm:break-normal"><Mail className="h-4 w-4 shrink-0 text-[#f58220]" />lab.innovacion.t@insnsb.gob.pe</p>
               <a href="/docs/bases-hackathon.pdf" target="_blank" rel="noopener noreferrer" className="flex gap-3 font-semibold text-[#f58220] transition-colors hover:text-[#ec008c]"><FileText className="h-4 w-4 shrink-0" />Ver bases del concurso</a>
             </div>
           </div>
 
           <div>
             <h3 className="font-display text-sm font-semibold text-white">Explorar</h3>
-            <div className="mt-5 flex flex-wrap gap-x-5 gap-y-3">{footerLinks.map((link) => <a key={link.href} href={link.href} className="text-sm text-slate-400 transition-colors hover:text-white">{link.label}</a>)}</div>
+            <div className="mt-4 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:gap-x-5 sm:gap-y-3">
+              {footerLinks.map((link) => (
+                <a key={link.href} href={link.href} className="text-sm text-slate-400 transition-colors hover:text-white">
+                  {link.label}
+                </a>
+              ))}
+            </div>
             <h3 className="mt-7 font-display text-sm font-semibold text-white">Redes oficiales</h3>
-            <div className="mt-4 flex flex-wrap gap-3">{socialLinks.map((link) => <a key={link.label} href={link.href} className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs text-slate-400 transition-colors hover:text-white">{link.label}</a>)}</div>
+            <div className="mt-4 flex flex-wrap gap-3">
+              {socialLinks.map((link) => (
+                <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs text-slate-400 transition-colors hover:text-white">
+                  {link.label}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-white/[0.06] pt-6 text-xs text-slate-500">© 2026 Instituto Nacional de Salud del Niño San Borja</div>
+        <div className="mt-9 border-t border-white/[0.06] pt-6 text-xs text-slate-500">
+          © 2026 Instituto Nacional de Salud del Niño San Borja
+        </div>
       </div>
     </footer>
   )
 }
-
-

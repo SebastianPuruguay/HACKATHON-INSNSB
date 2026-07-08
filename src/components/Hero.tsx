@@ -17,26 +17,26 @@ const quickInfo = [
   },
   {
     label: 'Sedes y aliados',
-    value: 'INSN San Borja como sede base, con espacios y soporte de ESAN y PUCP.',
+    value: 'INSN San Borja como sede base, con soporte de ESAN y PUCP.',
     icon: MapPin,
   },
   {
     label: 'Postulación',
-    value: 'Puedes inscribirte solo o en grupo. Si vas solo, se te asignará un equipo.',
+    value: 'Si vas solo, se te asignará un equipo. Máximo un desafío.',
     icon: UsersRound,
   },
 ]
 
 export function Hero() {
   return (
-    <section id="inicio" className="px-4 pt-4 pb-10 sm:px-6 sm:pb-12">
+    <section id="inicio" className="px-3 pt-2 pb-8 sm:px-6 sm:pt-4 sm:pb-12">
       <div className="mx-auto max-w-7xl">
-        <div className="overflow-hidden rounded-[34px] border border-white/10 bg-[#0e0931] shadow-[0_30px_100px_rgba(236,0,140,0.2)]">
+        <div className="overflow-hidden rounded-[24px] border border-white/10 bg-[#0e0931] shadow-[0_24px_80px_rgba(236,0,140,0.18)] sm:rounded-[34px]">
           <img
             src={eventBanner}
             alt="Hackatón Niño San Borja"
             loading="eager"
-            className="block aspect-[5/2] w-full object-cover object-center"
+            className="block aspect-[4/3] w-full object-cover object-center sm:aspect-[5/2]"
             onError={(event) => {
               event.currentTarget.onerror = null
               event.currentTarget.src = fallbackEventBanner
@@ -44,23 +44,23 @@ export function Hero() {
           />
         </div>
 
-        <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {quickInfo.map((item) => {
             const Icon = item.icon
             return (
               <article
                 key={item.label}
-                className="rounded-[24px] border border-white/10 bg-[#0e0931]/82 p-4 text-white shadow-[0_16px_45px_rgba(0,0,0,0.18)] backdrop-blur-xl"
+                className="rounded-[22px] border border-white/10 bg-[#0e0931]/82 p-3.5 text-white shadow-[0_14px_38px_rgba(0,0,0,0.16)] backdrop-blur-xl sm:p-4"
               >
                 <div className="flex gap-3">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-[#f58220]/25 bg-[#ec008c]/10 text-[#f58220]">
-                    <Icon className="h-5 w-5" />
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-[#f58220]/25 bg-[#ec008c]/10 text-[#f58220]">
+                    <Icon className="h-4.5 w-4.5" />
                   </span>
                   <div>
-                    <p className="text-[11px] font-bold tracking-[0.15em] text-[#f58220] uppercase">
+                    <p className="text-[10px] font-bold tracking-[0.14em] text-[#f58220] uppercase">
                       {item.label}
                     </p>
-                    <p className="mt-1 text-sm leading-6 text-slate-200">{item.value}</p>
+                    <p className="mt-1 text-[13px] leading-5 text-slate-200 sm:text-sm sm:leading-6">{item.value}</p>
                   </div>
                 </div>
               </article>
@@ -68,12 +68,12 @@ export function Hero() {
           })}
         </div>
 
-        <div className="mt-5 flex justify-center">
+        <div className="mt-4 flex">
           <a
             href="/docs/bases-hackathon.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-[#f58220]/35 bg-[#f58220] px-7 py-3.5 text-sm font-bold text-[#230443] shadow-[0_16px_38px_rgba(245,130,32,0.28)] transition hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_18px_42px_rgba(255,255,255,0.16)]"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#f58220]/35 bg-[#f58220] px-6 py-3.5 text-sm font-bold text-[#230443] shadow-[0_16px_38px_rgba(245,130,32,0.28)] transition hover:-translate-y-0.5 hover:bg-white sm:w-auto sm:px-7"
           >
             <FileText className="h-4 w-4" />
             Ver bases del concurso

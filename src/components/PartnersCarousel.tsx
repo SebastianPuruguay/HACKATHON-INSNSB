@@ -31,22 +31,36 @@ export function PartnersCarousel() {
   })
 
   return (
-    <section className="section-glow relative overflow-hidden bg-[#0e0931] py-24 sm:py-32">
+    <section className="section-glow relative overflow-hidden bg-[#0e0931] py-10 sm:py-16 md:py-24">
       <div className="circuit-pattern pointer-events-none absolute inset-0 opacity-10" />
-      <div className="dot-mesh pointer-events-none absolute inset-0 z-0 opacity-45" />
+      <div className="dot-mesh pointer-events-none absolute inset-0 z-0 opacity-35" />
       <div className="section-shell relative z-10">
         <Reveal className="mx-auto max-w-3xl text-center">
           <span className="section-eyebrow">Ecosistema de innovación</span>
-          <h2 className="font-display text-4xl leading-tight font-semibold tracking-[-0.04em] text-white sm:text-5xl">
+          <h2 className="font-display text-3xl leading-tight font-semibold tracking-[-0.04em] text-white sm:text-5xl">
             Organizador y aliados estratégicos
           </h2>
-          <p className="mt-4 text-sm leading-7 text-slate-300">
+          <p className="mt-3 text-sm leading-6 text-slate-300 sm:mt-4 sm:leading-7">
             El INSN San Borja lidera el evento con el apoyo de PUCP, Universidad ESAN y SGTD-PCM.
           </p>
         </Reveal>
+
+        <Reveal delay={0.08} className="mt-7 grid gap-3 md:hidden">
+          {partners.map((partner) => (
+            <article key={partner.name} className="flex items-center gap-4 rounded-[24px] border border-white/10 bg-[#230443]/60 p-4 shadow-[0_14px_38px_rgba(0,0,0,0.18)] backdrop-blur-xl">
+              <span className="flex h-20 w-28 shrink-0 items-center justify-center rounded-[20px] bg-white p-3 shadow-lg">
+                {partner.logo && <img src={partner.logo} alt={`Logo de ${partner.name}`} className="h-full w-full object-contain" />}
+              </span>
+              <span>
+                <span className="block font-display text-lg font-semibold tracking-[-0.03em] text-white">{partner.name}</span>
+                <span className="mt-1 block text-sm text-slate-400">{partner.type}</span>
+              </span>
+            </article>
+          ))}
+        </Reveal>
       </div>
 
-      <Reveal delay={0.1} className="relative mt-14">
+      <Reveal delay={0.1} className="relative mt-14 hidden md:block">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-[#0e0931] to-transparent sm:w-40" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-[#0e0931] to-transparent sm:w-40" />
         <div className="overflow-hidden" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>

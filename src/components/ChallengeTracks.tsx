@@ -37,12 +37,12 @@ export function ChallengeTracks() {
   const canGoNext = safeSlide < slides.length - 1
 
   return (
-    <section id="desafios" className="section-glow relative overflow-hidden bg-gradient-to-b from-[#0e0931] to-[#230443] py-10 sm:py-14">
-      <div className="circuit-pattern pointer-events-none absolute inset-0 opacity-15" />
-      <div className="dot-mesh pointer-events-none absolute inset-0 z-0 opacity-35" />
+    <section id="desafios" className="section-glow relative overflow-hidden bg-gradient-to-b from-[#0e0931] to-[#230443] py-9 sm:py-14">
+      <div className="circuit-pattern pointer-events-none absolute inset-0 opacity-10" />
+      <div className="dot-mesh pointer-events-none absolute inset-0 z-0 opacity-30" />
       <div className="section-shell relative z-10">
         <Reveal>
-          <div className="mb-6 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div className="mb-5 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
               <span className="section-eyebrow">Desafíos propuestos</span>
               <h2 className="font-display text-3xl leading-tight font-semibold tracking-[-0.04em] text-white sm:text-5xl">
@@ -53,16 +53,16 @@ export function ChallengeTracks() {
               </p>
             </div>
 
-            <div className="flex items-center justify-between gap-3 sm:justify-start">
-              <div className="rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-semibold text-white/70">
+            <div className="flex items-center justify-between gap-3 rounded-full border border-white/10 bg-white/[0.04] p-1.5 sm:justify-start">
+              <div className="px-3 text-sm font-semibold text-white/70">
                 {safeSlide + 1} / {slides.length}
               </div>
-              <div className="flex gap-2">
+              <div className="flex gap-1.5">
                 <button
                   type="button"
                   disabled={!canGoBack}
                   onClick={() => setSlide((current) => Math.max(current - 1, 0))}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] text-white transition hover:border-[#f58220]/45 disabled:cursor-not-allowed disabled:opacity-35"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] text-white transition hover:border-[#f58220]/45 disabled:cursor-not-allowed disabled:opacity-35"
                   aria-label="Ver desafíos anteriores"
                 >
                   <ArrowLeft className="h-5 w-5" />
@@ -71,7 +71,7 @@ export function ChallengeTracks() {
                   type="button"
                   disabled={!canGoNext}
                   onClick={() => setSlide((current) => Math.min(current + 1, slides.length - 1))}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] text-white transition hover:border-[#f58220]/45 disabled:cursor-not-allowed disabled:opacity-35"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] text-white transition hover:border-[#f58220]/45 disabled:cursor-not-allowed disabled:opacity-35"
                   aria-label="Ver desafíos siguientes"
                 >
                   <ArrowRight className="h-5 w-5" />
@@ -88,14 +88,14 @@ export function ChallengeTracks() {
 
             return (
               <Reveal key={challenge.id} delay={index * 0.04} className="h-full">
-                <article className="group relative flex h-full min-h-[430px] flex-col overflow-hidden rounded-[30px] border border-white/10 bg-[#0b0c3b]/68 p-5 text-white shadow-[0_18px_55px_rgba(0,0,0,0.22)] backdrop-blur-xl transition-all hover:border-[#ec008c]/35 sm:p-6 lg:min-h-[500px]">
-                  <Icon className="pointer-events-none absolute -right-8 -bottom-8 h-44 w-44 text-white/[0.035] transition group-hover:text-[#f58220]/10 sm:h-56 sm:w-56" />
+                <article className="group relative flex h-full flex-col overflow-hidden rounded-[26px] border border-white/10 bg-[#0b0c3b]/70 p-4 text-white shadow-[0_18px_55px_rgba(0,0,0,0.22)] backdrop-blur-xl transition-all hover:border-[#ec008c]/35 sm:rounded-[30px] sm:p-6 lg:min-h-[470px]">
+                  <Icon className="pointer-events-none absolute -right-8 -bottom-8 h-40 w-40 text-white/[0.035] transition group-hover:text-[#f58220]/10 sm:h-56 sm:w-56" />
                   <div className="absolute -top-24 -right-20 h-48 w-48 rounded-full bg-[#ec008c]/12 blur-3xl" />
                   <div className="absolute -bottom-28 -left-20 h-52 w-52 rounded-full bg-[#f58220]/10 blur-3xl" />
 
                   <div className="relative flex flex-1 flex-col">
-                    <div className="flex items-start justify-between gap-4">
-                      <span className="inline-flex items-center gap-2 rounded-full border border-[#f58220]/25 bg-[#ec008c]/10 px-3 py-1.5 text-xs font-bold tracking-[0.12em] text-[#f58220] uppercase">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <span className="inline-flex items-center gap-2 rounded-full border border-[#f58220]/25 bg-[#ec008c]/10 px-3 py-1.5 text-[11px] font-bold tracking-[0.12em] text-[#f58220] uppercase">
                         <Icon className="h-4 w-4" />
                         Desafío {index + 1}
                       </span>
@@ -104,14 +104,14 @@ export function ChallengeTracks() {
                       </span>
                     </div>
 
-                    <h3 className="mt-5 font-display text-2xl leading-tight font-semibold tracking-[-0.04em] text-white sm:text-3xl">
+                    <h3 className="mt-4 font-display text-xl leading-tight font-semibold tracking-[-0.04em] text-white sm:text-3xl">
                       {challenge.title}
                     </h3>
-                    <p className="mt-4 text-sm leading-7 text-slate-300">
+                    <p className="mt-3 text-sm leading-6 text-slate-300 sm:leading-7">
                       {challenge.description}
                     </p>
 
-                    <div className="mt-auto pt-6">
+                    <div className="mt-auto pt-5">
                       <a
                         href={`/docs/desafios/${challenge.id}.pdf`}
                         target="_blank"
@@ -129,7 +129,7 @@ export function ChallengeTracks() {
           })}
         </div>
 
-        <div className="mt-6 flex justify-center gap-2">
+        <div className="mt-5 flex justify-center gap-2">
           {slides.map((_, index) => (
             <button
               key={index}
