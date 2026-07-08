@@ -17,15 +17,14 @@ export function RegistrationCTA() {
                 <HeartPulse className="h-6 w-6" />
               </span>
               <h2 className="font-display text-4xl leading-[1.05] font-semibold tracking-[-0.04em] sm:text-5xl lg:text-6xl">
-                ¿Listo para co-crear soluciones con impacto en salud pediátrica?
+                ¿Listo para participar en la Hackatón Niño San Borja?
               </h2>
               <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
-                Puedes postular individualmente o con un equipo previamente conformado. El enlace oficial de inscripción será publicado próximamente.
+                Puedes inscribirte individualmente o con un equipo previamente conformado. Si te inscribes solo, se te asignará un equipo. Cada inscripción podrá escoger como máximo un desafío.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                {/* Replace this href with the official registration form when confirmed. */}
-                <motion.a href="#inscripcion" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="innovation-gradient group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-lg">
-                  Inscripción por confirmar <ArrowRight className="h-4 w-4" />
+                <motion.a href="https://facilita.gob.pe/t/55544" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="innovation-gradient group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-lg">
+                  Inscribirme <ArrowRight className="h-4 w-4" />
                 </motion.a>
                 <motion.a href="/docs/bases-hackathon.pdf" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.08] px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-xl">
                   <FileText className="h-4 w-4" /> Ver bases del concurso

@@ -26,9 +26,9 @@ export function Footer() {
           <div>
             <a href="#inicio" className="inline-flex flex-col items-start gap-4">
               <span className="flex items-center justify-center rounded-2xl border border-slate-200 bg-white p-3 shadow-sm"><img src={logoHorizontalInsnsb} alt="Logo del Instituto Nacional de Salud del Niño San Borja" className="h-10 w-auto object-contain md:h-12" /></span>
-              <span className="font-display text-lg font-semibold text-white">Hackatón en Salud Pediátrica INSNSB</span>
+              <span className="font-display text-lg font-semibold text-white">Hackatón Niño San Borja</span>
             </a>
-            <p className="mt-4 max-w-md text-sm leading-7 text-slate-400">Innovación, co-creación y colaboración multidisciplinaria para abordar desafíos prioritarios de la salud pediátrica peruana.</p>
+            <p className="mt-4 max-w-md text-sm leading-7 text-slate-400">Innovación, co-creación y colaboración multidisciplinaria para abordar desafíos prioritarios de la salud pediátrica peruana, con apoyo de PUCP, Universidad ESAN y SGTD-PCM.</p>
           </div>
 
           <div>

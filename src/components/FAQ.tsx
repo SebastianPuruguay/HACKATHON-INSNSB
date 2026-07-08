@@ -4,11 +4,30 @@ import { useState } from 'react'
 import { Reveal } from './Reveal'
 
 const questions = [
-  { question: '¿Quiénes pueden participar?', answer: 'Estudiantes universitarios desde sexto ciclo, egresados y profesionales interesados en soluciones innovadoras en salud.' },
-  { question: '¿Puedo postular individualmente?', answer: 'Sí. Puedes postular individualmente o con un equipo previamente conformado. El comité organizador podrá agrupar a quienes postulen individualmente.' },
-  { question: '¿Cuántas personas integran un equipo?', answer: 'Los equipos deben tener un mínimo de cuatro y un máximo de cinco integrantes. Cada participante solo puede formar parte de un equipo.' },
-  { question: '¿Cuál es la modalidad del evento?', answer: 'La Hackatón se desarrollará en modalidad híbrida, combinando actividades virtuales y presenciales.' },
-  { question: '¿Las mentorías son obligatorias?', answer: 'La participación en las mentorías y actividades que establezca la organización será obligatoria para los equipos.' },
+  {
+    question: '¿Quiénes pueden participar?',
+    answer: 'Estudiantes universitarios desde sexto ciclo, egresados y profesionales interesados en soluciones innovadoras en salud.',
+  },
+  {
+    question: '¿Puedo postular individualmente?',
+    answer: 'Sí. Puedes inscribirte individualmente o con un equipo previamente conformado. Si te inscribes solo, la organización te asignará un equipo.',
+  },
+  {
+    question: '¿Cuántas personas integran un equipo?',
+    answer: 'Los equipos recomendados son de 3 a 5 integrantes. Cada participante solo puede formar parte de un equipo.',
+  },
+  {
+    question: '¿Cuántos desafíos puedo escoger?',
+    answer: 'Cada inscripción individual o grupal podrá escoger como máximo un desafío.',
+  },
+  {
+    question: '¿Cuál es la modalidad del evento?',
+    answer: 'La Hackatón Niño San Borja se desarrollará en modalidad híbrida, combinando actividades virtuales y presenciales.',
+  },
+  {
+    question: '¿Las mentorías son obligatorias?',
+    answer: 'La participación en las mentorías y actividades que establezca la organización será obligatoria para los equipos.',
+  },
 ]
 
 export function FAQ() {
@@ -24,7 +43,7 @@ export function FAQ() {
             Información esencial para participar
           </h2>
           <p className="mt-5 max-w-md leading-7 text-slate-300">
-            Consulta las bases oficiales para conocer todas las condiciones, disposiciones y lineamientos del evento.
+            Consulta las bases oficiales para conocer todas las condiciones, disposiciones y lineamientos de la Hackatón Niño San Borja.
           </p>
         </Reveal>
         <Reveal delay={0.1} className="space-y-3">
@@ -40,7 +59,7 @@ export function FAQ() {
                 </button>
                 <AnimatePresence initial={false}>
                   {isOpen && (
-                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25 }}>
+                    <motion.div initial={{ height: 0, opacity: 1 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25 }}>
                       <p className="px-5 pb-6 text-sm leading-7 text-slate-400 sm:px-6">{item.answer}</p>
                     </motion.div>
                   )}

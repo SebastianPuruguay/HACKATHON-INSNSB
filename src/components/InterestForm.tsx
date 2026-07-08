@@ -67,9 +67,7 @@ export function InterestForm() {
   const toggleInterest = (challengeId: string) => {
     setForm((current) => ({
       ...current,
-      interests: current.interests.includes(challengeId)
-        ? current.interests.filter((id) => id !== challengeId)
-        : [...current.interests, challengeId],
+      interests: current.interests.includes(challengeId) ? [] : [challengeId],
     }));
   };
 
@@ -78,6 +76,11 @@ export function InterestForm() {
     setErrorMessage("");
     if (!interestFormEndpoint) {
       setErrorMessage("El endpoint de registro no está configurado.");
+      setStatus("error");
+      return;
+    }
+    if (form.interests.length === 0) {
+      setErrorMessage("Selecciona un desafío de interés.");
       setStatus("error");
       return;
     }
@@ -145,7 +148,7 @@ export function InterestForm() {
                   </p>
                   <ul className="mt-3 space-y-2 text-slate-300">
                     <li>Tu perfil, universidad y lugar de procedencia.</li>
-                    <li>Los desafíos que más te interesan.</li>
+                    <li>El desafío que más te interesa.</li>
                     <li>Ideas, preguntas u opiniones para el evento.</li>
                   </ul>
                 </div>
@@ -295,10 +298,10 @@ export function InterestForm() {
 
               <fieldset className="mt-7">
                 <legend className="text-sm font-medium text-white">
-                  ¿Qué desafíos te interesan? *
+                  ¿Qué desafío te interesa? *
                 </legend>
                 <p className="mt-1 text-xs leading-5 text-slate-400">
-                  Puedes seleccionar más de uno.
+                  Selecciona solo una opción.
                 </p>
                 <div className="mt-3 grid gap-2 sm:grid-cols-2">
                   {challenges.map((challenge) => (
@@ -307,7 +310,8 @@ export function InterestForm() {
                       className="flex cursor-pointer gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-3 text-xs leading-5 text-slate-300 transition hover:border-[#ec008c]/55"
                     >
                       <input
-                        type="checkbox"
+                        type="radio"
+                        name="challenge-interest"
                         checked={form.interests.includes(challenge.id)}
                         onChange={() => toggleInterest(challenge.id)}
                         className="mt-0.5 h-4 w-4 accent-[#ec008c]"

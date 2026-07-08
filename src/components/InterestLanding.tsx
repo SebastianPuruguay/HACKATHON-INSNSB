@@ -57,8 +57,7 @@ export function InterestLanding() {
               Explora los desafíos y elige dónde aportar
             </h1>
             <p className="mt-5 leading-7 text-white/70">
-              Abre cada desafío para leer el enunciado completo. Podrás
-              seleccionar los que más te interesen en el formulario.
+              Abre cada desafío para leer el enunciado completo. Cada inscripción individual o grupal podrá escoger como máximo un desafío.
             </p>
 
           </div>

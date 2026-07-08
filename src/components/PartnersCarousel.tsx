@@ -10,7 +10,7 @@ import { Reveal } from './Reveal'
 type Partner = { name: string; type: string; icon?: LucideIcon; logo?: string }
 
 const partners: Partner[] = [
-  { name: 'INSN San Borja', type: 'Organizador', logo: logoHorizontalInsnsb },
+  { name: 'INSN San Borja', type: 'Organizador y sede base', logo: logoHorizontalInsnsb },
   { name: 'PUCP', type: 'Aliado académico', logo: logoPucp },
   { name: 'Universidad ESAN', type: 'Aliado académico', logo: logoEsan },
   { name: 'SGTD-PCM', type: 'Aliado institucional', logo: logoPcm },
@@ -40,6 +40,9 @@ export function PartnersCarousel() {
           <h2 className="font-display text-4xl leading-tight font-semibold tracking-[-0.04em] text-white sm:text-5xl">
             Organizador y aliados estratégicos
           </h2>
+          <p className="mt-4 text-sm leading-7 text-slate-300">
+            El INSN San Borja lidera el evento con el apoyo de PUCP, Universidad ESAN y SGTD-PCM.
+          </p>
         </Reveal>
       </div>
 

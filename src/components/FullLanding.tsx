@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { About } from './About'
 import { ChallengeTracks } from './ChallengeTracks'
 import { Footer } from './Footer'
 import { Hero } from './Hero'
@@ -47,12 +46,7 @@ export function FullLanding() {
         return <PartnersCarousel />
       case 'inicio':
       default:
-        return (
-          <>
-            <Hero />
-            <About />
-          </>
-        )
+        return <Hero />
     }
   }, [activePage])
 

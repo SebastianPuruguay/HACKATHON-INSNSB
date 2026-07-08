@@ -20,7 +20,7 @@ export function About() {
             Un entorno colaborativo para abordar desafíos prioritarios
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300">
-            La Hackatón en Salud Pediátrica INSNSB conecta conocimiento académico,
+            La Hackatón Niño San Borja conecta conocimiento académico,
             experiencia del sector salud y talento innovador para co-crear propuestas
             integrales, viables y orientadas a generar impacto real en el sistema pediátrico peruano.
           </p>
