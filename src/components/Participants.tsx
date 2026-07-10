@@ -1,9 +1,8 @@
-import { GraduationCap, HeartPulse, Lightbulb, UsersRound } from 'lucide-react'
-import participantsGraphic from '../assets/hackathon-participants.png'
+import { CheckCircle2, GraduationCap, HeartPulse, Lightbulb, UsersRound } from 'lucide-react'
 import { Reveal } from './Reveal'
 
 const profiles = [
-  { title: 'Estudiantes', detail: 'Desde sexto ciclo', icon: GraduationCap },
+  { title: 'Estudiantes', detail: 'Desde primer ciclo', icon: GraduationCap },
   { title: 'Profesionales', detail: 'Salud y tecnología', icon: UsersRound },
   {
     title: 'Innovadores',
@@ -15,6 +14,13 @@ const profiles = [
     detail: 'Impacto y continuidad',
     icon: HeartPulse,
   },
+]
+
+const rules = [
+  'Puedes inscribirte solo o con equipo.',
+  'Si postulas solo, se te asignará un equipo.',
+  'Equipos recomendados de 3 a 5 integrantes.',
+  'Cada inscripción puede elegir un solo desafío.',
 ]
 
 export function Participants() {
@@ -32,68 +38,56 @@ export function Participants() {
           </h2>
         </Reveal>
 
-        <div className="mt-6 grid gap-4 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
+        <div className="mt-6 grid gap-4 lg:grid-cols-[0.92fr_1.08fr] lg:items-stretch">
           <Reveal className="h-full">
-            <div className="relative aspect-[3/2] h-full min-h-[230px] overflow-hidden rounded-[26px] border border-white/10 bg-[#230443]/55 shadow-[0_20px_70px_rgba(236,0,140,0.14)] sm:min-h-[340px] sm:rounded-[32px] lg:aspect-auto lg:min-h-[430px]">
-              <img
-                src={participantsGraphic}
-                alt="Participantes colaborando en la Hackatón Niño San Borja"
-                className="h-full w-full object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0b0c3b]/38 via-transparent to-transparent" />
-            </div>
+            <article className="relative flex h-full flex-col overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-[#230443]/90 via-[#0e0931]/90 to-[#0b0c3b]/90 p-5 text-white shadow-[0_20px_70px_rgba(236,0,140,0.14)] sm:p-7">
+              <div className="absolute -right-16 -top-16 h-52 w-52 rounded-full bg-[#ec008c]/18 blur-3xl" />
+              <div className="absolute -bottom-20 -left-16 h-52 w-52 rounded-full bg-[#f58220]/14 blur-3xl" />
+              <div className="relative">
+                <p className="text-xs font-bold tracking-[0.16em] text-[#f58220] uppercase">
+                  Cómo puedes postular
+                </p>
+                <h3 className="mt-3 font-display text-3xl leading-tight font-semibold tracking-[-0.04em] sm:text-4xl">
+                  Solo o en equipo, con perfiles diversos.
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-slate-300">
+                  Buscamos equipos capaces de combinar mirada clínica, tecnología, diseño, datos, gestión pública e innovación social.
+                </p>
+              </div>
+
+              <div className="relative mt-6 grid gap-3">
+                {rules.map((rule) => (
+                  <div key={rule} className="flex gap-3 rounded-2xl border border-white/10 bg-white/[0.05] p-3.5">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#f58220]" />
+                    <p className="text-sm leading-6 text-slate-200">{rule}</p>
+                  </div>
+                ))}
+              </div>
+            </article>
           </Reveal>
 
           <Reveal delay={0.08}>
-            <div className="flex h-full flex-col gap-3 sm:gap-4">
-              <div className="grid gap-3 sm:grid-cols-2">
-                {profiles.map((profile) => {
-                  const Icon = profile.icon
-                  return (
-                    <article
-                      key={profile.title}
-                      className="relative overflow-hidden rounded-[22px] border border-white/10 bg-[#230443]/55 p-3.5 shadow-[0_14px_36px_rgba(0,0,0,0.16)] sm:p-4"
-                    >
-                      <div className="flex items-start gap-3">
-                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-[#f58220]/25 bg-[#ec008c]/10 text-[#f58220]">
-                          <Icon className="h-5 w-5" />
-                        </span>
-                        <div>
-                          <h3 className="font-display text-base font-semibold tracking-[-0.03em] text-white sm:text-lg">
-                            {profile.title}
-                          </h3>
-                          <p className="mt-1 text-xs leading-5 text-slate-400">
-                            {profile.detail}
-                          </p>
-                        </div>
-                      </div>
-                    </article>
-                  )
-                })}
-              </div>
-
-              <article className="relative overflow-hidden rounded-[26px] border border-white/10 bg-gradient-to-br from-[#230443]/80 to-[#0e0931]/80 px-4 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.18)] sm:rounded-[30px] sm:px-6">
-                <div className="absolute -right-14 -bottom-20 h-40 w-40 rounded-full bg-[#f58220]/15 blur-3xl" />
-                <p className="text-xs font-bold tracking-[0.16em] text-[#f58220] uppercase">
-                  Puedes postular
-                </p>
-                <div className="relative mt-4 flex flex-wrap gap-2">
-                  {['Solo', 'Con equipo', 'De 3 a 5'].map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-white/12 bg-white/[0.08] px-4 py-2 font-display text-base font-semibold tracking-[-0.04em] text-white sm:px-5 sm:py-2.5 sm:text-lg"
-                    >
-                      {item}
+            <div className="grid h-full gap-3 sm:grid-cols-2">
+              {profiles.map((profile) => {
+                const Icon = profile.icon
+                return (
+                  <article
+                    key={profile.title}
+                    className="relative overflow-hidden rounded-[24px] border border-white/10 bg-[#230443]/55 p-4 shadow-[0_14px_36px_rgba(0,0,0,0.16)] sm:p-5"
+                  >
+                    <Icon className="pointer-events-none absolute -right-7 -bottom-7 h-28 w-28 text-white/[0.04]" />
+                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#f58220]/25 bg-[#ec008c]/10 text-[#f58220]">
+                      <Icon className="h-5 w-5" />
                     </span>
-                  ))}
-                </div>
-                <p className="relative mt-4 text-sm leading-6 text-slate-300">
-                  Si te inscribes solo, se te asignará un equipo. Cada inscripción individual o grupal podrá escoger un solo desafío.
-                </p>
-                <p className="relative mt-2 text-sm leading-6 text-slate-400">
-                  Se valoran equipos diversos: salud, tecnología, gestión, diseño, datos e innovación social.
-                </p>
-              </article>
+                    <h3 className="mt-4 font-display text-xl font-semibold tracking-[-0.04em] text-white">
+                      {profile.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-400">
+                      {profile.detail}
+                    </p>
+                  </article>
+                )
+              })}
             </div>
           </Reveal>
         </div>

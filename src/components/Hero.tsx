@@ -6,23 +6,23 @@ const eventBanner =
 
 const quickInfo = [
   {
-    label: 'Fechas principales',
-    value: 'Convocatoria hasta el 24 de julio. Hackatón del 3 al 21 de agosto.',
+    label: 'Fechas clave',
+    value: 'Exploración del 5 al 12 de agosto. Hackatón central del 13 al 15.',
     icon: CalendarDays,
   },
   {
-    label: 'Modalidad',
-    value: 'Híbrida: sesiones virtuales y actividades presenciales clave.',
+    label: 'Evento central',
+    value: '13 virtual. 14 y 15 presencial.',
     icon: MonitorSmartphone,
   },
   {
-    label: 'Sedes y aliados',
-    value: 'INSN San Borja como sede base, con soporte de ESAN y PUCP.',
+    label: 'Sedes',
+    value: 'INSN San Borja, ESAN y PUCP.',
     icon: MapPin,
   },
   {
     label: 'Postulación',
-    value: 'Si vas solo, se te asignará un equipo. Máximo un desafío.',
+    value: 'De 3 a 5 integrantes por equipo.',
     icon: UsersRound,
   },
 ]

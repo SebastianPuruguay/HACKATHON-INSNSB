@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { ChallengeTracks } from './ChallengeTracks'
+import { FAQ } from './FAQ'
 import { Footer } from './Footer'
 import { Hero } from './Hero'
 import { Navbar } from './Navbar'
@@ -8,7 +9,14 @@ import { Participants } from './Participants'
 import { PartnersCarousel } from './PartnersCarousel'
 import { Timeline } from './Timeline'
 
-const pages: LandingPageKey[] = ['inicio', 'desafios', 'cronograma', 'participantes', 'aliados']
+const pages: LandingPageKey[] = [
+  'inicio',
+  'desafios',
+  'cronograma',
+  'participantes',
+  'aliados',
+  'faq',
+]
 
 function getInitialPage(): LandingPageKey {
   const hashPage = window.location.hash.replace('#', '') as LandingPageKey
@@ -44,6 +52,8 @@ export function FullLanding() {
         return <Participants />
       case 'aliados':
         return <PartnersCarousel />
+      case 'faq':
+        return <FAQ />
       case 'inicio':
       default:
         return <Hero />

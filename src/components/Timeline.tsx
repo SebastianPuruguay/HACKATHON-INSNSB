@@ -1,4 +1,4 @@
-import { Award, CalendarDays, Search, UsersRound, Workflow, Zap } from 'lucide-react'
+import { Award, CalendarDays, Laptop, MapPin, Search, Workflow, Zap } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { Reveal } from './Reveal'
 
@@ -13,53 +13,59 @@ type ScheduleItem = {
 
 const schedule: ScheduleItem[] = [
   {
-    title: 'Planificación',
-    date: 'Junio 2026',
-    description: 'Programa, presupuesto y logística.',
-    icon: Workflow,
-    position: 'left-[11%] top-[55%]',
-    labelSide: 'top',
-  },
-  {
     title: 'Convocatoria',
-    date: '22 jun. - 24 jul.',
-    description: 'Invitación y difusión institucional.',
+    date: 'Hasta el 30 jul.',
+    description: 'Inscripción y recepción de postulaciones.',
     icon: CalendarDays,
-    position: 'left-[25%] top-[34%]',
-    labelSide: 'bottom',
-  },
-  {
-    title: 'Mentores',
-    date: '15 - 29 jun.',
-    description: 'Soporte clínico y tecnológico.',
-    icon: UsersRound,
-    position: 'left-[41%] top-[58%]',
+    position: 'left-[10%] top-[55%]',
     labelSide: 'top',
   },
   {
     title: 'Selección',
-    date: '25 - 31 jul.',
-    description: 'Revisión y anuncio de participantes.',
+    date: '31 jul. - 01 ago.',
+    description: 'Revisión y confirmación de participantes.',
     icon: Search,
-    position: 'left-[58%] top-[33%]',
+    position: 'left-[25%] top-[34%]',
     labelSide: 'bottom',
   },
   {
-    title: 'Ejecución',
-    date: '3 - 21 ago.',
-    description: 'Exploración, prototipo, validación y pitch.',
-    icon: Zap,
-    position: 'left-[74%] top-[56%]',
+    title: 'Exploración Hackatón',
+    date: '5 - 12 ago.',
+    description: 'Reconocimiento de desafíos, contexto, usuarios y primeros enfoques de solución.',
+    icon: Workflow,
+    position: 'left-[42%] top-[58%]',
     labelSide: 'top',
   },
   {
-    title: 'Post-Hackatón',
-    date: '24 - 31 ago.',
-    description: 'Resultados y próximos pasos.',
-    icon: Award,
-    position: 'left-[90%] top-[37%]',
+    title: 'Hackatón virtual',
+    date: '13 ago.',
+    description: 'Inicio del evento central en formato virtual: alineamiento, mentoría y preparación.',
+    icon: Laptop,
+    position: 'left-[59%] top-[33%]',
     labelSide: 'bottom',
   },
+  {
+    title: 'Hackatón presencial',
+    date: '14 - 15 ago.',
+    description: 'Trabajo intensivo presencial, prototipado, validación y presentación de soluciones.',
+    icon: Zap,
+    position: 'left-[76%] top-[56%]',
+    labelSide: 'top',
+  },
+  {
+    title: 'Premiación',
+    date: '22 ago.',
+    description: 'Resultados finales y reconocimiento de los equipos ganadores.',
+    icon: Award,
+    position: 'left-[91%] top-[37%]',
+    labelSide: 'bottom',
+  },
+]
+
+const keyModes = [
+  { label: 'Exploración', value: '5 al 12 de agosto', icon: Workflow },
+  { label: 'Día virtual', value: '13 de agosto', icon: Laptop },
+  { label: 'Presencial', value: '14 y 15 de agosto', icon: MapPin },
 ]
 
 export function Timeline() {
@@ -73,7 +79,27 @@ export function Timeline() {
           <h2 className="font-display text-3xl leading-tight font-semibold tracking-[-0.04em] sm:text-5xl">
             Ruta de avance
           </h2>
+          <p className="mt-3 text-sm leading-6 text-slate-300 sm:text-base">
+            La etapa de exploración será del 5 al 12 de agosto. El evento principal será del 13 al 15: 13 virtual, 14 y 15 presencial.
+          </p>
         </Reveal>
+
+        <div className="mt-6 grid gap-3 sm:grid-cols-3">
+          {keyModes.map((item) => {
+            const Icon = item.icon
+            return (
+              <Reveal key={item.label}>
+                <article className="rounded-[22px] border border-white/10 bg-white/[0.06] p-4 text-center shadow-[0_14px_38px_rgba(0,0,0,0.16)] backdrop-blur-xl">
+                  <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-2xl border border-[#f58220]/25 bg-[#ec008c]/10 text-[#f58220]">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <p className="mt-3 text-xs font-bold tracking-[0.14em] text-[#f58220] uppercase">{item.label}</p>
+                  <p className="mt-1 font-display text-lg font-semibold tracking-[-0.03em] text-white">{item.value}</p>
+                </article>
+              </Reveal>
+            )
+          })}
+        </div>
 
         <Reveal delay={0.1}>
           <div className="relative left-1/2 mt-6 hidden min-h-[520px] w-[min(1760px,calc(100vw-2rem))] -translate-x-1/2 overflow-hidden rounded-[48px] border border-white/10 bg-[#0b0c3b]/52 px-12 pt-2 pb-0 shadow-[0_24px_80px_rgba(236,0,140,0.14)] backdrop-blur-xl lg:block xl:min-h-[540px] xl:px-16">

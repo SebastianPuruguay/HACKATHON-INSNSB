@@ -1,7 +1,13 @@
 import { ArrowRight, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
-export type LandingPageKey = 'inicio' | 'desafios' | 'cronograma' | 'participantes' | 'aliados'
+export type LandingPageKey =
+  | 'inicio'
+  | 'desafios'
+  | 'cronograma'
+  | 'participantes'
+  | 'aliados'
+  | 'faq'
 
 type NavbarProps = {
   activePage: LandingPageKey
@@ -14,6 +20,7 @@ const links: Array<{ label: string; page: LandingPageKey }> = [
   { label: 'Cronograma', page: 'cronograma' },
   { label: 'Participantes', page: 'participantes' },
   { label: 'Aliados', page: 'aliados' },
+  { label: 'FAQ', page: 'faq' },
 ]
 
 export function Navbar({ activePage, onNavigate }: NavbarProps) {

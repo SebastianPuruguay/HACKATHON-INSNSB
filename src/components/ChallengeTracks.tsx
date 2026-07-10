@@ -99,9 +99,6 @@ export function ChallengeTracks() {
                         <Icon className="h-4 w-4" />
                         Desafío {index + 1}
                       </span>
-                      <span className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-[11px] font-semibold text-white/55">
-                        1 opción máx.
-                      </span>
                     </div>
 
                     <h3 className="mt-4 font-display text-xl leading-tight font-semibold tracking-[-0.04em] text-white sm:text-3xl">
