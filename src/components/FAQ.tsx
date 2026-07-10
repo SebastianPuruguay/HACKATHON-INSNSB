@@ -1,6 +1,7 @@
 import { Minus, Plus } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
 import { useState } from 'react'
+import { resourceLinks } from '../lib/resources'
 import { Reveal } from './Reveal'
 
 const questions = [
@@ -17,7 +18,7 @@ const questions = [
   {
     question: '¿La inscripción es individual o por equipos?',
     answer:
-      'Las personas pueden inscribirse individualmente o como parte de un equipo previamente conformado. Quienes se registren individualmente participarán en un espacio de socialización y conformación de equipos. También se habilitará una plataforma virtual, como Slack o Discord, para facilitar el contacto y el matching entre participantes; la plataforma seleccionada será comunicada oportunamente.',
+      'Las personas pueden inscribirse individualmente o como parte de un equipo previamente conformado. Quienes se registren individualmente participarán en un espacio de socialización y conformación de equipos. También se habilitará una canal de comunicación virtual para facilitar el contacto y el matching entre participantes; el canal seleccionado será comunicado oportunamente.',
   },
   {
     question: '¿Cuántas personas pueden integrar un equipo?',
@@ -89,7 +90,7 @@ export function FAQ() {
             condiciones.
           </p>
           <a
-            href="/docs/bases-hackathon.pdf"
+            href={resourceLinks.bases}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 inline-flex rounded-full border border-[#f58220]/40 bg-[#f58220] px-5 py-3 text-sm font-bold text-[#230443] transition hover:bg-white"

@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowRight, FileText } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { challenges } from '../lib/challenges'
+import { resourceLinks } from '../lib/resources'
 import { Reveal } from './Reveal'
 
 const desktopQuery = '(min-width: 1024px)'
@@ -110,7 +111,11 @@ export function ChallengeTracks() {
 
                     <div className="mt-auto pt-5">
                       <a
-                        href={`/docs/desafios/${challenge.id}.pdf`}
+                        href={
+                          resourceLinks.challenges[
+                            challenge.id as keyof typeof resourceLinks.challenges
+                          ]
+                        }
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#f58220]/25 bg-[#ec008c]/10 px-5 py-3 text-sm font-semibold text-[#f58220] transition hover:border-[#f58220]/55 hover:bg-[#ec008c]/20 sm:w-auto"

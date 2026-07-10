@@ -1,5 +1,6 @@
 import { CalendarDays, FileText, MapPin, MonitorSmartphone, UsersRound } from 'lucide-react'
 import fallbackEventBanner from '../assets/HACKATONFINAL.png'
+import { resourceLinks } from '../lib/resources'
 
 const eventBanner =
   'https://portal.insnsb.gob.pe/docencia/wp-content/uploads/HACKATONFINAL.png'
@@ -70,7 +71,7 @@ export function Hero() {
 
         <div className="mt-4 flex justify-center">
           <a
-            href="/docs/bases-hackathon.pdf"
+            href={resourceLinks.bases}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#f58220]/35 bg-[#f58220] px-6 py-3.5 text-sm font-bold text-[#230443] shadow-[0_16px_38px_rgba(245,130,32,0.28)] transition hover:-translate-y-0.5 hover:bg-white sm:w-auto sm:px-7"

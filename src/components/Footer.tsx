@@ -1,5 +1,6 @@
 import { FileText, Mail, MapPin, Phone } from 'lucide-react'
 import logoHorizontalInsnsb from '../assets/logoinsnsb.png'
+import { resourceLinks } from '../lib/resources'
 
 const footerLinks = [
   { label: 'Inicio', href: '#inicio' },
@@ -38,7 +39,7 @@ export function Footer() {
               <p className="flex gap-3"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#f58220]" />Av. Agustín de la Rosa Toro 1399, San Borja, Lima, Perú</p>
               <p className="flex gap-3"><Phone className="h-4 w-4 shrink-0 text-[#f58220]" />Central: 2300600 · Informes: anexo 2042</p>
               <p className="flex gap-3 break-all sm:break-normal"><Mail className="h-4 w-4 shrink-0 text-[#f58220]" />lab.innovacion.t@insnsb.gob.pe</p>
-              <a href="/docs/bases-hackathon.pdf" target="_blank" rel="noopener noreferrer" className="flex gap-3 font-semibold text-[#f58220] transition-colors hover:text-[#ec008c]"><FileText className="h-4 w-4 shrink-0" />Ver bases del concurso</a>
+              <a href={resourceLinks.bases} target="_blank" rel="noopener noreferrer" className="flex gap-3 font-semibold text-[#f58220] transition-colors hover:text-[#ec008c]"><FileText className="h-4 w-4 shrink-0" />Ver bases del concurso</a>
             </div>
           </div>
 

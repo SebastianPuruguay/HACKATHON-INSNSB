@@ -1,5 +1,6 @@
 import { ArrowRight, FileText, HeartPulse } from 'lucide-react'
 import { motion } from 'motion/react'
+import { resourceLinks } from '../lib/resources'
 import { Reveal } from './Reveal'
 
 export function RegistrationCTA() {
@@ -26,7 +27,7 @@ export function RegistrationCTA() {
                 <motion.a href="https://facilita.gob.pe/t/55544" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="innovation-gradient group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-lg">
                   Inscribirme <ArrowRight className="h-4 w-4" />
                 </motion.a>
-                <motion.a href="/docs/bases-hackathon.pdf" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.08] px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-xl">
+                <motion.a href={resourceLinks.bases} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.08] px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-xl">
                   <FileText className="h-4 w-4" /> Ver bases del concurso
                 </motion.a>
               </div>

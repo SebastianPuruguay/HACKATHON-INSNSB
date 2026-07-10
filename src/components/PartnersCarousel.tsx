@@ -4,6 +4,8 @@ import { useState } from 'react'
 import logoEsan from '../assets/aliado-esan.png'
 import logoPcm from '../assets/aliado-pcm.png'
 import logoPucp from '../assets/aliado-pucp.png'
+import logoCasaRonald from '../assets/casaronald.png'
+import logoLaboratoria from '../assets/laboratoria.jpg'
 import logoHorizontalInsnsb from '../assets/logoinsnsb.png'
 import { Reveal } from './Reveal'
 
@@ -14,6 +16,8 @@ const partners: Partner[] = [
   { name: 'PUCP', type: 'Aliado académico', logo: logoPucp },
   { name: 'Universidad ESAN', type: 'Aliado académico', logo: logoEsan },
   { name: 'SGTD-PCM', type: 'Aliado institucional', logo: logoPcm },
+  { name: 'Casa Ronald McDonald', type: 'Aliado institucional', logo: logoCasaRonald },
+  { name: 'Laboratoria', type: 'Aliado estratégico', logo: logoLaboratoria },
 ]
 
 const partnerCardWidth = 352
@@ -41,7 +45,7 @@ export function PartnersCarousel() {
             Organizador y aliados estratégicos
           </h2>
           <p className="mt-3 text-sm leading-6 text-slate-300 sm:mt-4 sm:leading-7">
-            El INSN San Borja lidera el evento con el apoyo de PUCP, Universidad ESAN y SGTD-PCM.
+            El INSN San Borja lidera el evento con el apoyo de aliados académicos, institucionales y de innovación.
           </p>
         </Reveal>
 
