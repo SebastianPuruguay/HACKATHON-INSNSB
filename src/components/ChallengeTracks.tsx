@@ -47,10 +47,10 @@ export function ChallengeTracks() {
             <div className="max-w-3xl">
               
               <h2 className="font-display text-3xl leading-tight font-semibold tracking-[-0.04em] text-white sm:text-5xl">
-                Elige un desafío para aportar
+                Elige el desafío que más te inspire
               </h2>
               <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base sm:leading-7">
-                Revisa cada reto con calma. Puedes indicar hasta dos desafíos de preferencia; la asignación final será para un solo desafío.
+                Elige un desafío principal y una segunda opción de interés. La asignación final se realizará en uno solo de ellos.
               </p>
             </div>
 
