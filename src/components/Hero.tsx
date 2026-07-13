@@ -7,7 +7,7 @@ const eventBanner =
 
 const quickInfo = [
   {
-    label: 'Fechas clave',
+    label: 'Fechas',
     value: 'Exploración del 5 al 12 de agosto. Hackatón central del 13 al 15.',
     icon: CalendarDays,
   },

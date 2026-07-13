@@ -54,7 +54,7 @@ const schedule: ScheduleItem[] = [
   },
   {
     title: 'Premiación',
-    date: '22 ago.',
+    date: '21 ago.',
     description: 'Resultados finales y reconocimiento de los equipos ganadores.',
     icon: Award,
     position: 'left-[91%] top-[37%]',
@@ -141,23 +141,33 @@ export function Timeline() {
           </div>
         </Reveal>
 
-        <div className="relative mt-7 space-y-3 pl-8 lg:hidden">
-          <div className="absolute bottom-6 left-5 top-6 w-1 rounded-full bg-gradient-to-b from-[#ec008c] via-[#f58220] to-[#ec008c]" />
+        <div className="relative mt-7 lg:hidden">
           {schedule.map((step, index) => {
             const Icon = step.icon
             return (
-              <Reveal key={step.title} delay={index * 0.04}>
-                <article className="relative overflow-hidden rounded-[22px] border border-white/10 bg-[#0b0c3b]/66 p-4 shadow-[0_16px_42px_rgba(0,0,0,0.18)] backdrop-blur-xl">
-                  <span className="absolute -left-7 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-[#f58220]/30 bg-[#0e0931] text-[#f58220] shadow-[0_0_24px_rgba(245,130,32,0.24)]">
+              <Reveal
+                key={step.title}
+                delay={index * 0.04}
+                className="relative grid grid-cols-[3rem_minmax(0,1fr)] gap-2 pb-3 last:pb-0"
+              >
+                <div className="flex justify-center pt-3">
+                  {index < schedule.length - 1 && (
+                    <span className="absolute top-15 bottom-[-0.75rem] left-6 w-px bg-gradient-to-b from-[#ec008c] via-[#f58220] to-[#ec008c]" />
+                  )}
+                  <span className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-[#f58220]/30 bg-[#0e0931] text-[#f58220] shadow-[0_0_24px_rgba(245,130,32,0.24)]">
                     <Icon className="h-5 w-5" />
                   </span>
-                  <div className="pl-1">
-                    <p className="text-[10px] font-bold tracking-[0.12em] text-[#f58220] uppercase">{step.date}</p>
-                    <h3 className="mt-1.5 font-display text-lg leading-tight font-semibold">
-                      {index + 1}. {step.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-400">{step.description}</p>
-                  </div>
+                </div>
+                <article className="min-w-0 overflow-hidden rounded-[22px] border border-white/10 bg-[#0b0c3b]/66 p-4 shadow-[0_16px_42px_rgba(0,0,0,0.18)] backdrop-blur-xl">
+                  <p className="text-[10px] font-bold tracking-[0.12em] text-[#f58220] uppercase">
+                    {step.date}
+                  </p>
+                  <h3 className="mt-1.5 font-display text-lg leading-tight font-semibold">
+                    {index + 1}. {step.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-400">
+                    {step.description}
+                  </p>
                 </article>
               </Reveal>
             )
