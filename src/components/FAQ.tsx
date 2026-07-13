@@ -38,7 +38,7 @@ const questions = [
   {
     question: '¿Cuál será la modalidad, el cronograma y la asistencia requerida?',
     answer:
-      'La Hackatón se desarrollará en modalidad híbrida. Del 5 al 12 de agosto se realizarán talleres y actividades de contextualización. El 13 de agosto se realizará el sprint virtual; el 14, un sprint presencial desde las 2:00 p. m.; y el 15, la jornada presencial de 9:00 a. m. a 7:00 p. m. En las sesiones presenciales, cada equipo deberá contar con la asistencia de al menos dos integrantes.',
+      'La Hackatón se desarrollará en modalidad híbrida. Del 5 al 12 de agosto se realizarán talleres, mentorías y actividades de preparación. El 13 de agosto se realizará la jornada virtual, y el 14 y 15 de agosto las jornadas presenciales. En las sesiones presenciales, cada equipo deberá contar con la asistencia de al menos dos integrantes.',
   },
   {
     question: '¿Es necesario llegar con una idea o solución previamente desarrollada?',
@@ -66,9 +66,9 @@ const questions = [
       'Los criterios, las ponderaciones y las demás condiciones de evaluación serán detallados en las bases de la Hackatón.',
   },
   {
-    question: '¿Cada equipo puede participar en más de un desafío?',
+    question: '¿Se pueden escoger dos desafíos de preferencia?',
     answer:
-      'No. Cada equipo desarrollará una propuesta para un solo desafío. Durante la inscripción deberán indicar una primera y una segunda opción de preferencia; la asignación definitiva considerará estas preferencias y una adecuada distribución de los equipos entre los desafíos.',
+      'Sí. Durante la inscripción pueden indicar una primera y una segunda opción de preferencia. Sin embargo, cada equipo desarrollará una propuesta para un solo desafío; la asignación definitiva considerará estas preferencias y una adecuada distribución de los equipos entre los desafíos.',
   },
 ]
 

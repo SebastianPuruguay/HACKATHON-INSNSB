@@ -21,7 +21,7 @@ export function RegistrationCTA() {
                 ¿Listo para participar en la Hackatón Niño San Borja?
               </h2>
               <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
-                Puedes inscribirte individualmente o con un equipo previamente conformado. Si te inscribes solo, se te asignará un equipo. Cada inscripción podrá escoger como máximo un desafío.
+                Puedes inscribirte individualmente o con un equipo previamente conformado. Si te inscribes solo, se te asignará un equipo. Podrás indicar hasta dos desafíos de preferencia y participarás en uno asignado por la organización.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <motion.a href="https://facilita.gob.pe/t/55544" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="innovation-gradient group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-lg">

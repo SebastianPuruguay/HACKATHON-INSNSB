@@ -14,48 +14,48 @@ type ScheduleItem = {
 const schedule: ScheduleItem[] = [
   {
     title: 'Convocatoria',
-    date: 'Hasta el 30 jul.',
-    description: 'Inscripción y recepción de postulaciones.',
+    date: 'Hasta el 30 de julio',
+    description: 'Inscripción individual o por equipos y recepción de postulaciones.',
     icon: CalendarDays,
     position: 'left-[10%] top-[55%]',
     labelSide: 'top',
   },
   {
-    title: 'Selección',
-    date: '31 jul. - 01 ago.',
-    description: 'Revisión y confirmación de participantes.',
+    title: 'Selección de participantes',
+    date: '31 de julio y 1 de agosto',
+    description: 'Revisión de postulaciones y confirmación de participantes.',
     icon: Search,
     position: 'left-[25%] top-[34%]',
     labelSide: 'bottom',
   },
   {
-    title: 'Exploración Hackatón',
-    date: '5 - 12 ago.',
-    description: 'Reconocimiento de desafíos, contexto, usuarios y primeros enfoques de solución.',
+    title: 'Preparación y mentorías',
+    date: 'Del 5 al 12 de agosto',
+    description: 'Talleres, mentorías y acercamiento a los desafíos, usuarios y contexto.',
     icon: Workflow,
     position: 'left-[42%] top-[58%]',
     labelSide: 'top',
   },
   {
-    title: 'Hackatón virtual',
-    date: '13 ago.',
-    description: 'Inicio del evento central en formato virtual: alineamiento, mentoría y preparación.',
+    title: 'Jornada virtual',
+    date: '13 de agosto',
+    description: 'Inicio de la Hackatón en modalidad virtual: orientación, alineamiento y preparación para las jornadas presenciales.',
     icon: Laptop,
     position: 'left-[59%] top-[33%]',
     labelSide: 'bottom',
   },
   {
-    title: 'Hackatón presencial',
-    date: '14 - 15 ago.',
-    description: 'Trabajo intensivo presencial, prototipado, validación y presentación de soluciones.',
+    title: 'Jornadas presenciales',
+    date: '14 y 15 de agosto',
+    description: 'Desarrollo intensivo de soluciones, prototipado, validación y presentación final.',
     icon: Zap,
     position: 'left-[76%] top-[56%]',
     labelSide: 'top',
   },
   {
     title: 'Premiación',
-    date: '21 ago.',
-    description: 'Resultados finales y reconocimiento de los equipos ganadores.',
+    date: '21 de agosto',
+    description: 'Presentación de resultados y reconocimiento de los equipos ganadores.',
     icon: Award,
     position: 'left-[91%] top-[37%]',
     labelSide: 'bottom',
@@ -63,9 +63,9 @@ const schedule: ScheduleItem[] = [
 ]
 
 const keyModes = [
-  { label: 'Exploración', value: '5 al 12 de agosto', icon: Workflow },
-  { label: 'Día virtual', value: '13 de agosto', icon: Laptop },
-  { label: 'Presencial', value: '14 y 15 de agosto', icon: MapPin },
+  { label: 'Preparación y mentorías', value: '5 al 12 de agosto', icon: Workflow },
+  { label: 'Jornada virtual', value: '13 de agosto', icon: Laptop },
+  { label: 'Jornadas presenciales', value: '14 y 15 de agosto', icon: MapPin },
 ]
 
 export function Timeline() {
@@ -75,12 +75,12 @@ export function Timeline() {
       <div className="dot-mesh-fade pointer-events-none absolute inset-0 z-0 opacity-45" />
       <div className="section-shell relative z-10">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <span className="section-eyebrow border-white/10 bg-white/10 text-[#f58220]">Cronograma oficial</span>
+          
           <h2 className="font-display text-3xl leading-tight font-semibold tracking-[-0.04em] sm:text-5xl">
             Ruta de avance
           </h2>
           <p className="mt-3 text-sm leading-6 text-slate-300 sm:text-base">
-            La etapa de exploración será del 5 al 12 de agosto. El evento principal será del 13 al 15: 13 virtual, 14 y 15 presencial.
+            Preparación y mentorías del 5 al 12 de agosto. La Hackatón tendrá una jornada virtual el 13 de agosto y jornadas presenciales el 14 y 15 de agosto.
           </p>
         </Reveal>
 

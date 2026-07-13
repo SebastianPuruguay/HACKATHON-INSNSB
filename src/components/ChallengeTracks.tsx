@@ -45,12 +45,12 @@ export function ChallengeTracks() {
         <Reveal>
           <div className="mb-5 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <span className="section-eyebrow">Desafíos propuestos</span>
+              
               <h2 className="font-display text-3xl leading-tight font-semibold tracking-[-0.04em] text-white sm:text-5xl">
                 Elige un desafío para aportar
               </h2>
               <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base sm:leading-7">
-                Revisa cada reto con calma. Cada inscripción individual o grupal podrá escoger como máximo un desafío.
+                Revisa cada reto con calma. Puedes indicar hasta dos desafíos de preferencia; la asignación final será para un solo desafío.
               </p>
             </div>
 

@@ -2,25 +2,25 @@ import { CheckCircle2, GraduationCap, HeartPulse, Lightbulb, UsersRound } from '
 import { Reveal } from './Reveal'
 
 const profiles = [
-  { title: 'Estudiantes', detail: 'Desde primer ciclo', icon: GraduationCap },
-  { title: 'Profesionales', detail: 'Salud y tecnología', icon: UsersRound },
+  { title: 'Estudiantes', detail: 'Desde el primer ciclo', icon: GraduationCap },
+  { title: 'Profesionales de salud', detail: 'Áreas clínicas y asistenciales', icon: UsersRound },
   {
-    title: 'Innovadores',
-    detail: 'Diseño, datos y prototipos',
+    title: 'Profesionales de tecnología e innovación',
+    detail: 'Tecnología, diseño, datos y prototipado.',
     icon: Lightbulb,
   },
   {
-    title: 'Gestión pública',
-    detail: 'Impacto y continuidad',
+    title: 'Servidores y gestores públicos',
+    detail: 'Gestión pública e innovación social.',
     icon: HeartPulse,
   },
 ]
 
 const rules = [
-  'Puedes inscribirte solo o con equipo.',
-  'Si postulas solo, se te asignará un equipo.',
-  'Equipos recomendados de 3 a 5 integrantes.',
-  'Cada inscripción puede elegir un solo desafío.',
+  'Puedes inscribirte individualmente o como equipo.',
+  'Si te inscribes individualmente, te asignaremos un equipo.',
+  'Los equipos estarán conformados por 3 a 5 integrantes.',
+  'Cada participante o equipo podrá seleccionar un desafío principal y una segunda opción de interés.',
 ]
 
 export function Participants() {
@@ -32,7 +32,7 @@ export function Participants() {
       <div className="dot-mesh pointer-events-none absolute inset-0 z-0 opacity-40" />
       <div className="section-shell relative z-10">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <span className="section-eyebrow">Participantes</span>
+          
           <h2 className="font-display text-3xl leading-tight font-semibold tracking-[-0.04em] text-white sm:text-5xl">
             Personas distintas, un mismo reto
           </h2>
@@ -48,10 +48,10 @@ export function Participants() {
                   Cómo puedes postular
                 </p>
                 <h3 className="mt-3 font-display text-3xl leading-tight font-semibold tracking-[-0.04em] sm:text-4xl">
-                  Solo o en equipo, con perfiles diversos.
+                  De manera individual o en equipo
                 </h3>
                 <p className="mt-4 text-sm leading-7 text-slate-300">
-                  Buscamos equipos capaces de combinar mirada clínica, tecnología, diseño, datos, gestión pública e innovación social.
+                  Buscamos participantes con perfiles diversos que integren conocimientos de salud, tecnología, diseño, datos, gestión pública e innovación social.
                 </p>
               </div>
 

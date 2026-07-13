@@ -15,13 +15,13 @@ const keyDates = [
   },
   {
     label: "Convocatoria oficial",
-    value: "08 de julio",
+    value: "8 de julio",
     icon: CalendarDays,
     href: null,
   },
   {
     label: "Hackatón",
-    value: "Del 04 al 21 de agosto",
+    value: "Del 4 al 21 de agosto",
     icon: Sparkles,
     href: null,
   },
@@ -57,7 +57,7 @@ export function InterestLanding() {
               Explora los desafíos y elige dónde aportar
             </h1>
             <p className="mt-5 leading-7 text-white/70">
-              Abre cada desafío para leer el enunciado completo. Cada inscripción individual o grupal podrá escoger como máximo un desafío.
+              Abre cada desafío para leer el enunciado completo. Cada inscripción individual o grupal podrá indicar hasta dos preferencias, pero participará en un solo desafío.
             </p>
 
           </div>

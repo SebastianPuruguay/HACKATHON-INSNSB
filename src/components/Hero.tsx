@@ -8,12 +8,12 @@ const eventBanner =
 const quickInfo = [
   {
     label: 'Fechas',
-    value: 'Exploración del 5 al 12 de agosto. Hackatón central del 13 al 15.',
+    value: 'Talleres y mentorías: 5 al 12 de agosto\nHackatón: 13 al 15 de agosto',
     icon: CalendarDays,
   },
   {
-    label: 'Evento central',
-    value: '13 virtual. 14 y 15 presencial.',
+    label: 'Modalidad',
+    value: '13 de agosto: virtual\n14 y 15 de agosto: presencial',
     icon: MonitorSmartphone,
   },
   {
@@ -23,7 +23,7 @@ const quickInfo = [
   },
   {
     label: 'Postulación',
-    value: 'De 3 a 5 integrantes por equipo.',
+    value: 'Inscripción individual\no en equipo de 3 a 5 integrantes.',
     icon: UsersRound,
   },
 ]
@@ -61,7 +61,9 @@ export function Hero() {
                     <p className="text-[10px] font-bold tracking-[0.14em] text-[#f58220] uppercase">
                       {item.label}
                     </p>
-                    <p className="mt-1 text-[13px] leading-5 text-slate-200 sm:text-sm sm:leading-6">{item.value}</p>
+                    <p className="mt-1 whitespace-pre-line text-[10px] leading-5 text-slate-200 sm:text-sm sm:leading-6">
+                      {item.value}
+                    </p>
                   </div>
                 </div>
               </article>

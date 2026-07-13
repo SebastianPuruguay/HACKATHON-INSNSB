@@ -12,9 +12,9 @@ import { Reveal } from './Reveal'
 type Partner = { name: string; type: string; icon?: LucideIcon; logo?: string }
 
 const partners: Partner[] = [
-  { name: 'INSN San Borja', type: 'Organizador y sede base', logo: logoHorizontalInsnsb },
-  { name: 'PUCP', type: 'Aliado académico', logo: logoPucp },
-  { name: 'Universidad ESAN', type: 'Aliado académico', logo: logoEsan },
+  { name: 'INSN San Borja', type: 'Institución organizadora y sede principal', logo: logoHorizontalInsnsb },
+  { name: 'PUCP', type: 'Aliado académico y sede', logo: logoPucp },
+  { name: 'Universidad ESAN', type: 'Aliado académico y sede', logo: logoEsan },
   { name: 'SGTD-PCM', type: 'Aliado institucional', logo: logoPcm },
   { name: 'Casa Ronald McDonald', type: 'Aliado institucional', logo: logoCasaRonald },
   { name: 'Laboratoria', type: 'Aliado estratégico', logo: logoLaboratoria },
@@ -45,7 +45,7 @@ export function PartnersCarousel() {
             Organizador y aliados estratégicos
           </h2>
           <p className="mt-3 text-sm leading-6 text-slate-300 sm:mt-4 sm:leading-7">
-            El INSN San Borja lidera el evento con el apoyo de aliados académicos, institucionales y de innovación.
+            El INSN San Borja organiza y lidera la Hackatón con el apoyo de aliados académicos, institucionales y estratégicos.
           </p>
         </Reveal>
 

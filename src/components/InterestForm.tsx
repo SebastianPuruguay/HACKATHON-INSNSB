@@ -65,10 +65,18 @@ export function InterestForm() {
   const [errorMessage, setErrorMessage] = useState("");
 
   const toggleInterest = (challengeId: string) => {
-    setForm((current) => ({
-      ...current,
-      interests: current.interests.includes(challengeId) ? [] : [challengeId],
-    }));
+    setForm((current) => {
+      if (current.interests.includes(challengeId)) {
+        return {
+          ...current,
+          interests: current.interests.filter((id) => id !== challengeId),
+        };
+      }
+
+      return current.interests.length === 2
+        ? current
+        : { ...current, interests: [...current.interests, challengeId] };
+    });
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -148,7 +156,7 @@ export function InterestForm() {
                   </p>
                   <ul className="mt-3 space-y-2 text-slate-300">
                     <li>Tu perfil, universidad y lugar de procedencia.</li>
-                    <li>El desafío que más te interesa.</li>
+                    <li>Hasta dos desafíos de preferencia.</li>
                     <li>Ideas, preguntas u opiniones para el evento.</li>
                   </ul>
                 </div>
@@ -298,10 +306,10 @@ export function InterestForm() {
 
               <fieldset className="mt-7">
                 <legend className="text-sm font-medium text-white">
-                  ¿Qué desafío te interesa? *
+                  ¿Qué desafíos te interesan? *
                 </legend>
                 <p className="mt-1 text-xs leading-5 text-slate-400">
-                  Selecciona solo una opción.
+                  Puedes seleccionar hasta dos preferencias. La asignación final será para un solo desafío.
                 </p>
                 <div className="mt-3 grid gap-2 sm:grid-cols-2">
                   {challenges.map((challenge) => (
@@ -310,11 +318,14 @@ export function InterestForm() {
                       className="flex cursor-pointer gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-3 text-xs leading-5 text-slate-300 transition hover:border-[#ec008c]/55"
                     >
                       <input
-                        type="radio"
-                        name="challenge-interest"
+                        type="checkbox"
+                        disabled={
+                          !form.interests.includes(challenge.id) &&
+                          form.interests.length === 2
+                        }
                         checked={form.interests.includes(challenge.id)}
                         onChange={() => toggleInterest(challenge.id)}
-                        className="mt-0.5 h-4 w-4 accent-[#ec008c]"
+                        className="mt-0.5 h-4 w-4 accent-[#ec008c] disabled:cursor-not-allowed disabled:opacity-45"
                       />
                       <span>{challenge.title}</span>
                     </label>
