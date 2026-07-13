@@ -2,7 +2,7 @@ import { CheckCircle2, GraduationCap, HeartPulse, Lightbulb, UsersRound } from '
 import { Reveal } from './Reveal'
 
 const profiles = [
-  { title: 'Estudiantes', detail: 'Desde el primer ciclo', icon: GraduationCap },
+  { title: 'Estudiantes', detail: 'Desde el sexto ciclo', icon: GraduationCap },
   { title: 'Profesionales de salud', detail: 'Áreas clínicas y asistenciales', icon: UsersRound },
   {
     title: 'Profesionales de tecnología e innovación',
