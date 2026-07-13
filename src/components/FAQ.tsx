@@ -18,7 +18,7 @@ const questions = [
   {
     question: '¿La inscripción es individual o por equipos?',
     answer:
-      'Las personas pueden inscribirse individualmente o como parte de un equipo previamente conformado. Quienes se registren individualmente participarán en un espacio de socialización y conformación de equipos. También se habilitará una canal de comunicación virtual para facilitar el contacto y el matching entre participantes; el canal seleccionado será comunicado oportunamente.',
+      'Las personas pueden inscribirse individualmente o como parte de un equipo previamente conformado. Quienes se registren individualmente participarán en un espacio de socialización y conformación de equipos. También se habilitará un canal de comunicación virtual para facilitar el contacto y el matching entre participantes; el canal seleccionado será comunicado oportunamente.',
   },
   {
     question: '¿Cuántas personas pueden integrar un equipo?',
