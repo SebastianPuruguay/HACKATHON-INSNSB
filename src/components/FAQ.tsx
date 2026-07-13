@@ -80,7 +80,7 @@ export function FAQ() {
       <div className="dot-mesh pointer-events-none absolute inset-0 z-0 opacity-45" />
       <div className="section-shell relative z-10 grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-14">
         <Reveal>
-          <span className="section-eyebrow">Preguntas frecuentes</span>
+          
           <h1 className="mt-4 font-display text-3xl leading-tight font-semibold tracking-[-0.04em] text-white sm:text-5xl">
             Todo lo esencial para participar
           </h1>

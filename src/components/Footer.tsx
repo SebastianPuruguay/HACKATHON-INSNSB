@@ -1,5 +1,5 @@
 import { FileText, Mail, MapPin, Phone } from 'lucide-react'
-import logoHorizontalInsnsb from '../assets/logoinsnsb.png'
+import logoHorizontalInsnsb from '../assets/logoinsnsb-blanco.png'
 import { resourceLinks } from '../lib/resources'
 
 const footerLinks = [
@@ -23,13 +23,13 @@ export function Footer() {
         <div className="grid gap-8 lg:grid-cols-[1fr_1fr_0.8fr] lg:gap-12">
           <div>
             <a href="#inicio" className="inline-flex flex-col items-start gap-4">
-              <span className="flex items-center justify-center rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
-                <img src={logoHorizontalInsnsb} alt="Logo del Instituto Nacional de Salud del Niño San Borja" className="h-9 w-auto object-contain sm:h-12" />
+              <span className="flex items-center justify-center rounded-2xl   p-3 shadow-sm">
+                <img src={logoHorizontalInsnsb} alt="Logo del Instituto Nacional de Salud del Niño San Borja" className="h-13 w-auto object-contain sm:h-16" />
               </span>
               <span className="font-display text-lg font-semibold text-white">Hackatón Niño San Borja</span>
             </a>
             <p className="mt-4 max-w-md text-sm leading-7 text-slate-400">
-              Innovación, co-creación y colaboración multidisciplinaria para abordar desafíos prioritarios de la salud pediátrica peruana, con apoyo de PUCP, Universidad ESAN y SGTD-PCM.
+              Un espacio de innovación colaborativa que, con el soporte de la Secretaría de Gobierno y Transformación Digital de la Presidencia del Consejo de Ministros (PCM) y en colaboración con la PUCP y ESAN.
             </p>
           </div>
 

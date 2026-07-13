@@ -20,7 +20,7 @@ const links: Array<{ label: string; page: LandingPageKey }> = [
   { label: 'Cronograma', page: 'cronograma' },
   { label: 'Participantes', page: 'participantes' },
   { label: 'Aliados', page: 'aliados' },
-  { label: 'FAQ', page: 'faq' },
+  { label: 'Preguntas frecuentes', page: 'faq' },
 ]
 
 export function Navbar({ activePage, onNavigate }: NavbarProps) {
