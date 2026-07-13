@@ -48,12 +48,12 @@ const questions = [
   {
     question: '¿Qué deberán presentar los equipos?',
     answer:
-      'Cada equipo deberá presentar su propuesta y mostrar un producto mínimo viable (MVP), es decir, una versión inicial y demostrable de la solución. Las bases de la Hackatón detallarán los requisitos, formatos y contenidos mínimos de ambos entregables.',
+      'Cada equipo deberá presentar su propuesta y mostrar un producto mínimo viable (MVP), es decir, una versión inicial y demostrable de la solución. Las bases de la Hackatón detallan los requisitos así como el formato del entregable final.',
   },
   {
     question: '¿Qué nivel de desarrollo deberá alcanzar la solución?',
     answer:
-      'Se espera un MVP, prototipo o prueba de concepto que permita demostrar el funcionamiento o la lógica central de la propuesta. No será necesario presentar una solución completamente implementada, certificada o validada clínicamente. Para soluciones tecnológicas se tomará como referencia un alcance equivalente al TRL 3; para procesos, servicios u otras soluciones no tecnológicas, se deberá presentar un prototipo equivalente que explique y demuestre claramente su funcionamiento.',
+      'Se espera un producto mínimo viable (MVP), prototipo o prueba de concepto que permita demostrar el funcionamiento o la lógica central de la propuesta. No será necesario presentar una solución completamente implementada, certificada o validada clínicamente. Para soluciones tecnológicas se tomará como referencia un alcance equivalente al TRL 3 (https://vinculate.concytec.gob.pe/niveles-de-madurez/) ; para procesos, servicios u otras soluciones no tecnológicas, se deberá presentar un prototipo equivalente que explique y demuestre claramente su funcionamiento.',
   },
   {
     question: '¿Cuándo se realizará la presentación final y el anuncio de los equipos ganadores?',
@@ -62,8 +62,21 @@ const questions = [
   },
   {
     question: '¿Cuáles serán los criterios de evaluación?',
-    answer:
-      'Los criterios, las ponderaciones y las demás condiciones de evaluación serán detallados en las bases de la Hackatón.',
+    answer: (
+      <>
+        Los criterios, las ponderaciones y las demás condiciones de evaluación
+        se encuentran detalladas en las{' '}
+        <a
+          href={resourceLinks.bases}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-[#f58220] underline decoration-[#ec008c]/60 underline-offset-4 transition hover:text-white"
+        >
+          bases de la Hackatón
+        </a>
+        .
+      </>
+    ),
   },
   {
     question: '¿Se pueden escoger dos desafíos de preferencia?',

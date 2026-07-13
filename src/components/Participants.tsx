@@ -51,7 +51,7 @@ export function Participants() {
                   De manera individual o en equipo
                 </h3>
                 <p className="mt-4 text-sm leading-7 text-slate-300">
-                  Buscamos participantes con perfiles diversos que integren conocimientos de salud, tecnología, diseño, datos, gestión pública e innovación social.
+                  Buscamos participantes con perfiles diversos que integren conocimientos de salud, tecnología, diseño, datos, gestión pública e innovación.
                 </p>
               </div>
 
@@ -67,27 +67,32 @@ export function Participants() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <div className="grid h-full gap-3 sm:grid-cols-2">
-              {profiles.map((profile) => {
-                const Icon = profile.icon
-                return (
-                  <article
-                    key={profile.title}
-                    className="relative overflow-hidden rounded-[24px] border border-white/10 bg-[#230443]/55 p-4 shadow-[0_14px_36px_rgba(0,0,0,0.16)] sm:p-5"
-                  >
-                    <Icon className="pointer-events-none absolute -right-7 -bottom-7 h-28 w-28 text-white/[0.04]" />
-                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#f58220]/25 bg-[#ec008c]/10 text-[#f58220]">
-                      <Icon className="h-5 w-5" />
-                    </span>
-                    <h3 className="mt-4 font-display text-xl font-semibold tracking-[-0.04em] text-white">
-                      {profile.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-400">
-                      {profile.detail}
-                    </p>
-                  </article>
-                )
-              })}
+            <div className="h-full">
+              <h3 className="mb-3 font-display text-xl font-semibold tracking-[-0.04em] text-white sm:text-2xl">
+                Quiénes pueden participar
+              </h3>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {profiles.map((profile) => {
+                  const Icon = profile.icon
+                  return (
+                    <article
+                      key={profile.title}
+                      className="relative overflow-hidden rounded-[24px] border border-white/10 bg-[#230443]/55 p-4 shadow-[0_14px_36px_rgba(0,0,0,0.16)] sm:p-5"
+                    >
+                      <Icon className="pointer-events-none absolute -right-7 -bottom-7 h-28 w-28 text-white/[0.04]" />
+                      <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#f58220]/25 bg-[#ec008c]/10 text-[#f58220]">
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      <h4 className="mt-4 font-display text-xl font-semibold tracking-[-0.04em] text-white">
+                        {profile.title}
+                      </h4>
+                      <p className="mt-2 text-sm leading-6 text-slate-400">
+                        {profile.detail}
+                      </p>
+                    </article>
+                  )
+                })}
+              </div>
             </div>
           </Reveal>
         </div>

@@ -77,11 +77,8 @@ export function Timeline() {
         <Reveal className="mx-auto max-w-3xl text-center">
           
           <h2 className="font-display text-3xl leading-tight font-semibold tracking-[-0.04em] sm:text-5xl">
-            Ruta de avance
+            Ruta de la Hackatón
           </h2>
-          <p className="mt-3 text-sm leading-6 text-slate-300 sm:text-base">
-            Preparación y mentorías del 5 al 12 de agosto. La Hackatón tendrá una jornada virtual el 13 de agosto y jornadas presenciales el 14 y 15 de agosto.
-          </p>
         </Reveal>
 
         <div className="mt-6 grid gap-3 sm:grid-cols-3">
