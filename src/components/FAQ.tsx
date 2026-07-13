@@ -8,7 +8,7 @@ const questions = [
   {
     question: '¿Quiénes pueden participar en la Hackatón Niño San Borja 2026?',
     answer:
-      'La convocatoria es abierta y está dirigida a estudiantes y profesionales mayores de 18 años de ingeniería, ciencias de la salud y otras disciplinas o áreas afines. Pueden participar personas de distintos campos interesadas en aportar al desarrollo de soluciones innovadoras para la salud infantil.',
+      'La convocatoria está dirigida a estudiantes mayores de 18 años y a profesionales de ingeniería, ciencias de la salud y áreas afines. Pueden participar personas de diversos campos interesadas en contribuir al desarrollo de soluciones innovadoras para la salud infantil.',
   },
   {
     question: '¿Pueden participar personas de otras regiones del Perú?',

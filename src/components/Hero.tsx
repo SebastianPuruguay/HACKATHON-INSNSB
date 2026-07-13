@@ -37,7 +37,7 @@ export function Hero() {
             src={eventBanner}
             alt="Hackatón Niño San Borja"
             loading="eager"
-            className="block aspect-[4/3] w-full object-cover object-center sm:aspect-[5/2]"
+            className="block h-auto w-full object-contain sm:aspect-[5/2] sm:object-cover"
             onError={(event) => {
               event.currentTarget.onerror = null
               event.currentTarget.src = fallbackEventBanner

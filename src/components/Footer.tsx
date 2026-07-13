@@ -34,7 +34,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display text-sm font-semibold text-white">Contacto institucional</h3>
+            <h3 className="font-display text-sm font-semibold text-white">Contacto</h3>
             <div className="mt-5 space-y-3 text-sm text-slate-400">
               <p className="flex gap-3"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#f58220]" />Av. Agustín de la Rosa Toro 1399, San Borja, Lima, Perú</p>
               <p className="flex gap-3"><Phone className="h-4 w-4 shrink-0 text-[#f58220]" />Central: 2300600 · Informes: anexo 2042</p>
